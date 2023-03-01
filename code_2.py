@@ -33,3 +33,4 @@ grouped_km=grouped_km.sort_values(by=['Total'],ascending=False)
 grouped_km['Type']=[chr(ord('A')+i) for i in range(input)]
 
 print(grouped_km)
+print("hi")
