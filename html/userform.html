@@ -1,17 +1,4 @@
 <!DOCTYPE html>
-
-<!-- =========================================================
-* Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
-==============================================================
-
-* Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/
-* Created by: ThemeSelection
-* License: You must have a valid license purchased in order to legally use the theme for your project.
-* Copyright ThemeSelection (https://themeselection.com)
-
-=========================================================
- -->
-<!-- beautify ignore:start -->
 <html
   lang="en"
   class="light-style layout-menu-fixed"
@@ -27,7 +14,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Blog</title>
+    <title>Add Student Details</title>
 
     <meta name="description" content="" />
 
@@ -139,20 +126,20 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
-            <li class="menu-item ">
+            <li class="menu-item">
               <a href="dashboard.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
-            <li class="menu-item ">
+            <li class="menu-item active open">
               <a href="form.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Layouts">Add Details</div>
               </a>
             </li>
-            <li class="menu-item open active ">
-              <a href="cards-basic.html" class="menu-link">
+            <li class="menu-item">
+              <a href="blog.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
                 <div data-i18n="Basic">Blog</div>
               </a>
@@ -164,11 +151,13 @@
               </a>
             </li>
             <li class="menu-item">
-              <a href="auth-login-basic.html" class="menu-link">
+              <a href="index.html" class="menu-link">
                 <i class="bx bx-power-off me-2"></i>
                 <div data-i18n="Basic">Log Out</div>
               </a>
             </li>
+
+            <!-- Components -->
           </ul>
         </aside>
         <!-- / Menu -->
@@ -202,23 +191,99 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span>Blog</h4>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">ADD/</span> EDIT DETAILS</h4>
 
-              <h6 class="pb-1 mb-4 text-muted">Header and footer</h6>
-              <div class="row mb-5">
-                <div class="col-md-6 col-lg-4 mb-3">
-                  <div class="card">
-                    <div class="card-header">Featured</div>
+              <!-- Basic Layout -->
+              <div class="row">
+                <div class="col-xl">
+                  <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                      <h5 class="mb-0">Enter Details</h5>
+                      <small class="text-muted float-end">for Student</small>
+                    </div>
                     <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">
-                        With supporting text below as a natural lead-in to additional content natural lead-in to
-                        additional content.
-                      </p>
-                      <a href="javascript:void(0)" class="btn btn-primary">Go somewhere</a>
+                      <form>
+                        <div class="mb-3">
+                          <label class="form-label" for="basic-default-fullname">Full Name</label>
+                          <input type="text" class="form-control" id="basic-default-fullname" placeholder="Student's Name" />
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label" for="basic-default-company">Roll-no</label>
+                          <input type="text" class="form-control" id="basic-default-company" placeholder="Student's Roll no" />
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label" for="basic-default-email">Email</label>
+                          <div class="input-group input-group-merge">
+                            <input
+                              type="text"
+                              id="basic-default-email"
+                              class="form-control"
+                              placeholder="Student@email.com"
+                              aria-label="john.doe"
+                              aria-describedby="basic-default-email2"
+                            />
+                            <span class="input-group-text" id="basic-default-email2"></span>
+                          </div>
+                          <div class="form-text">It is recommended to enter college email</div>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label" for="basic-default-phone">Phone No</label>
+                          <input
+                            type="text"
+                            id="basic-default-phone"
+                            class="form-control phone-mask"
+                            placeholder="658 799 8941"
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label" for="basic-default-message">Message</label>
+                          <textarea
+                            id="basic-default-message"
+                            class="form-control"
+                            placeholder="Hi, Do you have a moment to talk Joe?"
+                          ></textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlSelect1" class="form-label">Extra circular Activities</label>
+                          <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
+                            <option selected="">Select Position in a club /Sports Team</option>
+                            <option value="1">Volunteer/Team Member</option>
+                            <option value="2">Board Member /Team Captain</option>
+                            <option value="3">Chairperson</option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label" for="basic-default-fullname">C.GPA</label>
+                          <input type="text" class="form-control" id="cgpa" placeholder="Cgpa until currnt Semester" />
+                        </div>
+                      </div>
+                        <div class="mb-3" style="width:max-content;text-align: left; width:100%; margin-left: 30px; display: flex;justify-content:left;">
+                          <label for="html5-number-input" class="col-md-2 col-form-label">Enter Number of Backlogs</label>
+                          <div class="col-md-10" style="width:30%;margin:10px 30px 0 0 ;">
+                            <input class="form-control" type="number" value="0" id="html5-number-input" max="20" min="0">
+                          </div>
+                          <label for="html5-number-input" class="col-md-2 col-form-label">Enter Number of Certificates</label>
+                          <div class="col-md-10" style="width:30%;margin:10px 30px 0 0; ">
+                            <input class="form-control" type="number" value="0" id="html5-number-input" max="20" min="0">
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <div>
+                            <h5 class="form-label" style="margin-left:30px;">Upload Certcificates</h5>
+                            <div class="input-group" style="max-width: 95%; margin: 30px;" >
+                              <input type="file" class="form-control" id="inputGroupFile02">
+                              <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Add Details</button>
+                      </form>
                     </div>
                   </div>
                 </div>
+              </div>
             </div>
             <!-- / Content -->
 
@@ -230,7 +295,9 @@
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
-                  , made with ❤️ 
+                    made with ❤️ 
+                <div>
+  
                 </div>
               </div>
             </footer>
@@ -248,8 +315,9 @@
     </div>
     <!-- / Layout wrapper -->
 
+
     <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
+    <!-- build:js ../assets/vendor/js/core.js -->
     <script src="../assets/vendor/libs/jquery/jquery.js"></script>
     <script src="../assets/vendor/libs/popper/popper.js"></script>
     <script src="../assets/vendor/js/bootstrap.js"></script>
@@ -259,7 +327,6 @@
     <!-- endbuild -->
 
     <!-- Vendors JS -->
-    <script src="../assets/vendor/libs/masonry/masonry.js"></script>
 
     <!-- Main JS -->
     <script src="../assets/js/main.js"></script>
