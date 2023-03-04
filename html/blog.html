@@ -204,10 +204,11 @@
             <div class="container-xxl flex-grow-1 container-p-y">
               <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span>Blog</h4>
 
-              <h6 class="pb-1 mb-4 text-muted">Header and footer</h6>
-              <div class="row mb-5">
-                <div class="col-md-6 col-lg-4 mb-3">
-                  <div class="card">
+              
+              <!-- <h6 class="pb-1 mb-4 text-muted">Header and footer</h6>
+              <div class="row mb-5 card w-50">
+                <div class="col-md-6 col-lg-4 mb-3 card w-50">
+                  <div class="card" id="card-container">
                     <div class="card-header">Featured</div>
                     <div class="card-body">
                       <h5 class="card-title">Special title treatment</h5>
@@ -219,7 +220,93 @@
                     </div>
                   </div>
                 </div>
+              </div>  -->
+              <div class="col-lg-4 col-md-6">
+              <div class="mt-3">
+                <!-- Button trigger modal -->
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalCenter"
+                >
+                  Add Card
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modalCenterTitle">Modal title</h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="row">
+                          <div class="col mb-3">
+                            <label for="nameWithTitle" class="form-label">Title</label>
+                            <input
+                              type="text"
+                              id="nameWithTitle"
+                              class="form-control"
+                              placeholder="Enter title"
+                            />
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label" for="basic-default-message">Description</label>
+                          <textarea
+                            id="basic-default-message"
+                            class="form-control"
+                            placeholder="Hi, Do you have a moment to talk Joe?"
+                          ></textarea>
+                        </div>
+                        <div class="row">
+                          <div class="col mb-3">
+                            <label for="nameWithTitle" class="form-label">Link</label>
+                            <input
+                              type="text"
+                              id="link"
+                              class="form-control"
+                              placeholder="Enter Link"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="addCard()" >Add Card</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
             </div>
+            <h6 class="pb-1 mb-4 text-muted">   </h6>
+              <div class="card w-100">
+                <div class="card w-100">
+                  <div class="card" id="card-container">
+                    <div class="card-header">Featured</div>
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">
+                        With supporting text below as a natural lead-in to additional content natural lead-in to
+                        additional content.
+                      </p>
+                      <a href="javascript:void(0)" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+
             <!-- / Content -->
 
             <!-- Footer -->

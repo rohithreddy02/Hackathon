@@ -116,3 +116,24 @@ let menu, animate;
   // Auto update menu collapsed/expanded based on the themeConfig
   window.Helpers.setCollapsed(true, false);
 })();
+
+function addCard() {
+  var container = document.getElementById("card-container");
+  var title = document.getElementById("nameWithTitle").value;
+  var content = document.getElementById("basic-default-message").value;
+  var link = document.getElementById("link").value;
+  var card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = `<div class="card">
+  <div class="card-header">Featured</div>
+  <div class="card-body">
+    <h5 class="card-title">`+title+`</h5>
+    <p class="card-text">`+
+      content
+    +`</p>
+    <a href="`+link+`" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>`
+  container.appendChild(card);
+}
+
