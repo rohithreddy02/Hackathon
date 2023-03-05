@@ -137,6 +137,9 @@ function addCard() {
   container.appendChild(card);
 }
 
+function authenticate() {
+			var username = document.getElementById("email").value;
+			var password = document.getElementById("password").value;
 
 			// Check if username and password are correct
 			if (username === "admin" && password === "password1") {
