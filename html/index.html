@@ -125,7 +125,7 @@
               <h4 class="mb-2">Welcome to SSPS! 👋</h4>
               <p class="mb-4">Please sign-in to your account and start the adventure</p>
 
-              <form id="formAuthentication" class="mb-3" action="dashboard.html" method="POST">
+              <form id="formAuthentication" class="mb-3"  method="POST">
                 <div class="mb-3">
                   <label for="email" class="form-label">Email or Username</label>
                   <input
@@ -135,6 +135,7 @@
                     name="email-username"
                     placeholder="Enter your email or username"
                     autofocus
+                    required
                   />
                 </div>
                 <div class="mb-3 form-password-toggle">
@@ -152,6 +153,7 @@
                       name="password"
                       placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                       aria-describedby="password"
+                      required
                     />
                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                   </div>
@@ -163,7 +165,7 @@
                   </div>
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                    <button class="btn btn-primary d-grid w-100" type="submit" onclick="authenticate()">Sign in</button>
                 </div>
               </form>
               
