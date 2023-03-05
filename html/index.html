@@ -49,6 +49,7 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../assets/js/config.js"></script>
+  
   </head>
 
   <body>
@@ -165,7 +166,7 @@
                   </div>
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-primary d-grid w-100" type="submit" onclick="authenticate()">Sign in</button>
+                    <button class="btn btn-primary d-grid w-100" type="submit" id="submit" onclick="authenticate()">Sign in</button>
                 </div>
               </form>
               
@@ -193,6 +194,7 @@
     <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
     <script src="../assets/vendor/js/menu.js"></script>
+    <script src="../assets/js/logincheck.js"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
