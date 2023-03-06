@@ -16,15 +16,16 @@ app.post('/submit', (req, res) => {
   
   // Send a response back to the client
   console.log(email);
+  console.log(__dirname);
   res.send('Form submitted successfully!')
 })
 
 // Serve index.html as the root route
 app.get('/', (req, res) => {
-  res.sendFile('C:/Users/srujan/Desktop/Hackathon/html/index.html')
+  res.sendFile(__dirname+'/html/index.html');
 })
-
+app.use('/assets',express.static(__dirname+'/assets'))
 // Start the server
 app.listen(3000, () => {
-  console.log('Server started on http://localhost:3000')
+  console.log('Server started on http://localhost:3000');
 })
