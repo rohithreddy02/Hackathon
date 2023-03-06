@@ -23,4 +23,4 @@ plt.xlabel('No of Semesters --->', fontsize=14)
 plt.ylabel('Grade Point Average --->', fontsize=14)
 
 # plt.show()
-plt.savefig('parallelcoor.png')
+plt.savefig('Charts/parallelcoor.png')
