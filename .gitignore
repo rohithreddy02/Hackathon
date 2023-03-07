@@ -3,6 +3,8 @@
 .AppleDouble
 .LSOverride
 
+# Node_Modules
+./Node_Modules
 # Thumbnails
 ._*
 Thumbs.db
