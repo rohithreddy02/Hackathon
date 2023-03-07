@@ -15,17 +15,20 @@ app.post('/submit', (req, res) => {
   // For example, save form data to a database or send an email
   
   // Send a response back to the client
-  console.log(email);
-  console.log(__dirname);
-  res.send('Form submitted successfully!')
+  res.sendFile(__dirname+'/html/dashboard.html');
 })
 
 // Serve index.html as the root route
 app.get('/', (req, res) => {
   res.sendFile(__dirname+'/html/index.html');
 })
+
+//To apply css to the index page.
 app.use('/assets',express.static(__dirname+'/assets'))
+
+
 // Start the server
+
 app.listen(3000, () => {
   console.log('Server started on http://localhost:3000');
 })
