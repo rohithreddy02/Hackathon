@@ -1,19 +1,30 @@
-// var ele = document.getElementById("submit");
-// ele.onclick = authenticate();
-const { spawn } = require('child_process');
-const express=require('express')
-const app=express()
-app.listen(5000,()=>{
-    console.log("hiiii");
-})
-function authenticate() {
-//     var username = document.getElementById("email").value;
-//     var password = document.getElementById("password").value;
-    
+function authenticate(username, password) {
     const { spawn } = require('child_process');
     const py = spawn('python', ['logincheck.py', username, password]);
-    py.stdout.on('data', (data) => {
-        alert(`Output from Python: ${data}`);
-    });
     
-}
+    return new Promise((resolve, reject) => {
+      let result = '';
+  
+      py.stdout.on('data', (data) => {
+        result += data.toString();
+      });
+  
+      py.stdout.on('end', () => {
+        resolve(result.trim());
+      });
+  
+      py.on('error', (err) => {
+        reject(err);
+      });
+    });
+  }
+  authenticate('20311A0501', 'wdvvdh')
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+
+module.exports=authenticate;
+

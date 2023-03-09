@@ -13,11 +13,11 @@ try:
     passwd,count=cursr.fetchone()
     if count>0:
         if password==passwd:
-            print("Account Verified!!!")
+            print(True)
         else:
-            print("Wrong Password!!!!")
+            print(False)
     else:
-        print("User not Found or Incorrect Username!!!!")
+        print(False)
         
 except:
     db_connect.rollback()
