@@ -6,16 +6,26 @@ db_connect=pymysql.connect(host="127.0.0.1",user="root",passwd="Srujan@1409",dat
 cursr=db_connect.cursor()
 username=str(sys.argv[1])
 password=str(sys.argv[2])
+
 try:
     #execute sql command
     command='select password,count(*) from logindata where username="'+username+'";'
     cursr.execute(command)
     passwd,count=cursr.fetchone()
+    command='select admin from logindata where username="'+username+'";'
+    cursr.execute(command) 
+    admin=cursr.fetchone()[0]
     if count>0:
-        if password==passwd:
-            print(True)
-        else:
-            print(False)
+        if admin=="Yes":
+            if password==passwd:
+                print("True-Admin")
+            else:
+                print("False-Admin")
+        elif admin=="No":
+            if password==passwd:
+                print("True-Student")
+            else:
+                print("False-Student")
     else:
         print(False)
         
