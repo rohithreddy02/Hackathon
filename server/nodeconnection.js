@@ -41,21 +41,12 @@ app.post('/submit', (req, res) => {
       res.sendFile(__dirname+'/html/userdashboard.html')
     }
     else{
-      res.send("Invalid ")
+      res.send("Invalid credentials")
     }
   })
   .catch((err) => {
     console.error(err);
   });
-
-
-
-  // Handle form submission here
-  // For example, save form data to a database or send an email
-  // res.send(output)
-  // console.log(module);
-  // Send a response back to the client
-  // res.sendFile(__dirname+'/html/dashboard.html');
 })
 
 // Serve index.html as the root route
