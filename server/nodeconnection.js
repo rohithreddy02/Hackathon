@@ -18,7 +18,11 @@ app.post('/submit', (req, res) => {
   res.sendFile(__dirname+'/html/dashboard.html');
 })
 
-// NAVIGATION
+// Serve index.html as the root route
+app.get('/', (req, res) => {
+  res.sendFile(__dirname+'/html/index.html');
+})
+
 // navigation to form
 app.get('/form.html', (req, res) => {
   res.sendFile(__dirname+'/html/form.html');
@@ -44,6 +48,9 @@ app.get('/blog.html', (req, res) => {
   res.sendFile(__dirname+'/html/blog.html');
 })
 
+app.get('/dashboard.html', (req, res) => {
+  res.sendFile(__dirname+'/html/dashboard.html');
+})
 //To apply css to the index page.
 app.use('/assets',express.static(__dirname+'/assets'))
 
