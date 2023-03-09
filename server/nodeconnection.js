@@ -18,9 +18,30 @@ app.post('/submit', (req, res) => {
   res.sendFile(__dirname+'/html/dashboard.html');
 })
 
-// Serve index.html as the root route
-app.get('/', (req, res) => {
+// NAVIGATION
+// navigation to form
+app.get('/form.html', (req, res) => {
+  res.sendFile(__dirname+'/html/form.html');
+})
+
+// navigation to cluster
+app.get('/cluster.html', (req, res) => {
+  res.sendFile(__dirname+'/html/cluster.html');
+})
+
+// navigation to logout
+app.get('/index.html', (req, res) => {
   res.sendFile(__dirname+'/html/index.html');
+})
+
+// navigation to ranking
+app.get('/ranking.html', (req, res) => {
+  res.sendFile(__dirname+'/html/ranking.html');
+})
+
+// navigation to blog
+app.get('/blog.html', (req, res) => {
+  res.sendFile(__dirname+'/html/blog.html');
 })
 
 //To apply css to the index page.
