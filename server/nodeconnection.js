@@ -15,17 +15,48 @@ app.post('/submit', (req, res) => {
   // For example, save form data to a database or send an email
   
   // Send a response back to the client
-  console.log(email);
-  console.log(__dirname);
-  res.send('Form submitted successfully!')
+  res.sendFile(__dirname+'/html/dashboard.html');
 })
 
 // Serve index.html as the root route
 app.get('/', (req, res) => {
   res.sendFile(__dirname+'/html/index.html');
 })
+
+// navigation to form
+app.get('/form.html', (req, res) => {
+  res.sendFile(__dirname+'/html/form.html');
+})
+
+// navigation to cluster
+app.get('/cluster.html', (req, res) => {
+  res.sendFile(__dirname+'/html/cluster.html');
+})
+
+// navigation to logout
+app.get('/index.html', (req, res) => {
+  res.sendFile(__dirname+'/html/index.html');
+})
+
+// navigation to ranking
+app.get('/ranking.html', (req, res) => {
+  res.sendFile(__dirname+'/html/ranking.html');
+})
+
+// navigation to blog
+app.get('/blog.html', (req, res) => {
+  res.sendFile(__dirname+'/html/blog.html');
+})
+
+app.get('/dashboard.html', (req, res) => {
+  res.sendFile(__dirname+'/html/dashboard.html');
+})
+//To apply css to the index page.
 app.use('/assets',express.static(__dirname+'/assets'))
+
+
 // Start the server
+
 app.listen(3000, () => {
   console.log('Server started on http://localhost:3000');
 })
