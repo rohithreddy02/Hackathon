@@ -34,8 +34,14 @@ app.post('/submit', (req, res) => {
     });
   }
   authenticate(email, password).then((result) => {
-    if(result=='True'){
+    if(result=='True-Admin'){
         res.sendFile(__dirname+'/html/dashboard.html')
+    }
+    else if(result=='True-Student'){
+      res.sendFile(__dirname+'/html/userdashboard.html')
+    }
+    else{
+      res.send("Invalid ")
     }
   })
   .catch((err) => {
