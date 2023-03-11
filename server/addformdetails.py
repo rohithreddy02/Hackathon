@@ -2,7 +2,7 @@ import pymysql
 import sys
 
 #connect database
-db_connect=pymysql.connect(host='127.0.0.1',database='dheemanthdb1',user='root',password="Dheemanth@127")
+db_connect=pymysql.connect(host="dheemanthdb1.cspqrfmzp8xf.ap-south-1.rds.amazonaws.com",user="admin",passwd="Dheemanth12",database="dheemanthdb1")
 cursr=db_connect.cursor()
 
 #Taking the details.
@@ -25,7 +25,7 @@ extra=str(sys.argv[15])
 
 #ADDING THE VALUES INTO Studentdetails
 try:
-    command='insert into StudentDetails values("'+rollno+'","'+name+'","'+email+'","'+s11_g+'","'+s11_b+'","'+s12_g+'","'+s12_b+'","'+s21_g+'","'+s21_b+'","'+s22_g+'","'+s22_b+'","'+totalBacklogs+'","'+totalGpa+'","'+noCert+'","'+extra+'");'
+    command='insert into Studentdetails values("'+rollno+'","'+name+'","'+email+'","'+s11_g+'","'+s11_b+'","'+s12_g+'","'+s12_b+'","'+s21_g+'","'+s21_b+'","'+s22_g+'","'+s22_b+'","'+totalBacklogs+'","'+totalGpa+'","'+noCert+'","'+extra+'");'
     cursr.execute(command)
     db_connect.commit()
 except:
