@@ -34,6 +34,7 @@ app.post('/submit', (req, res) => {
     });
   }
   authenticate(email, password).then((result) => {
+    res.sendFile(__dirname+'/html/dashboard.html')
     if(result=='True-Admin'){
         res.sendFile(__dirname+'/html/dashboard.html')
     }
@@ -48,6 +49,23 @@ app.post('/submit', (req, res) => {
     console.error(err);
   });
 })
+
+
+// Code for add-details.
+app.post('/add_db',(req,res)=>{
+  const {spawn} = require('child_process');
+  const py = spawn('python', ['addformdetails.py', req.body.Sname, req.body.Sno , req.body.Semail , req.body.s11_g ,req.body.s11_b, req.body.s12_g ,req.body.s12_b, req.body.s21_g, req.body.s21_b, req.body.s22_g, req.body.s22_b, req.body.SBack , req.body.Scgpa, req.body.Scert , req.body.SExtra  ]);
+  py.stdout.on('data', (data) => {
+    console.log(`Output from Python: ${data}`);
+  });
+  py.stderr.on('data', (data) => {
+    console.error(`Error from Python: ${data}`);
+  });
+  res.send("Added Files");
+})
+
+
+
 
 // Serve index.html as the root route
 app.get('/', (req, res) => {
