@@ -96,8 +96,39 @@ app.get('/blog.html', (req, res) => {
   res.sendFile(__dirname+'/html/blog.html');
 })
 
-app.get('/dashboard.html', (req, res) => {
-  res.sendFile(__dirname+'/html/dashboard.html');
+// user navigation pages
+
+app.get('/userdashboard.html', (req, res) => {
+  res.sendFile(__dirname+'/html/userdashboard.html');
+})
+
+// navigation to form
+app.get('/userform.html', (req, res) => {
+  res.sendFile(__dirname+'/html/userform.html');
+})
+
+// navigation to cluster
+app.get('/usercluster.html', (req, res) => {
+  res.sendFile(__dirname+'/html/usercluster.html');
+})
+
+// navigation to logout
+app.get('/index.html', (req, res) => {
+  res.sendFile(__dirname+'/html/index.html');
+})
+
+// navigation to ranking
+app.get('/userranking.html', (req, res) => {
+  res.sendFile(__dirname+'/html/userranking.html');
+})
+
+// navigation to blog
+app.get('/userblog.html', (req, res) => {
+  res.sendFile(__dirname+'/html/userblog.html');
+})
+
+app.get('/userdashboard.html', (req, res) => {
+  res.sendFile(__dirname+'/html/userdashboard.html');
 })
 //To apply css to the index page.
 app.use('/assets',express.static(__dirname+'/assets'))
