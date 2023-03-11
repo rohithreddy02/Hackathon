@@ -2,7 +2,7 @@ import pymysql
 import sys
 
 #connect database
-db_connect=pymysql.connect(host="192.168.1.3",user="hackathon-1",passwd="hackathon",database="dheemanthdb1")
+db_connect=pymysql.connect(host="dheemanthdb1.cspqrfmzp8xf.ap-south-1.rds.amazonaws.com",user="admin",passwd="Dheemanth12",database="dheemanthdb1")
 cursr=db_connect.cursor()
 username=str(sys.argv[1])
 password=str(sys.argv[2])

@@ -34,7 +34,6 @@ app.post('/submit', (req, res) => {
     });
   }
   authenticate(email, password).then((result) => {
-    res.sendFile(__dirname+'/html/dashboard.html')
     if(result=='True-Admin'){
         res.sendFile(__dirname+'/html/dashboard.html')
     }
