@@ -5,9 +5,49 @@ const app = express()
 // Use body-parser middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: false }))
 
+//Define route to handle submission of registration
+app.post('/check',(req,res)=>{
+  var r=Object.values(req.body)
+  console.log(r);
+  const username=r[0]
+  const email=r[1]
+  const password=r[2]
+  function authen(username,email,password){
+    const { spawn }=require('child_process');
+    const py=spawn('python',['insertintodb.py',username,email,password]);
+
+    return new Promise((resolve, reject) => {
+      let result = '';
+  
+      py.stdout.on('data', (data) => {
+        result += data.toString();
+      });
+  
+      py.stdout.on('end', () => {
+        resolve(result.trim());
+      });
+  
+      py.on('error', (err) => {
+        reject(err);
+      });
+    });
+  }
+  authen(username,email,password).then((result) => {
+    if(result=="Account Created"){
+      res.sendFile(__dirname+"/html/index.html")
+    }
+    else if(result=="User Exist"){
+      res.sendFile(__dirname+"/html/index.html")
+    }
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+})
+
 // Define route to handle form submission
 app.post('/submit', (req, res) => {
-  // const {email,password}=req.body
+  // const {username,email,password}=req.body
   var a=Object.values(req.body)
   // console.log(req);
   const email=a[0]
@@ -70,12 +110,14 @@ app.post('/add_db',(req,res)=>{
 app.get('/', (req, res) => {
   res.sendFile(__dirname+'/html/index.html');
 })
-
+//Navigation To Register Page
+app.get('/auth-register-basic.html',(req,res)=>{
+  res.sendFile(__dirname+'/html/auth-register-basic.html');
+})
 // navigation to form
 app.get('/form.html', (req, res) => {
   res.sendFile(__dirname+'/html/form.html');
 })
-
 // navigation to cluster
 app.get('/cluster.html', (req, res) => {
   res.sendFile(__dirname+'/html/cluster.html');
