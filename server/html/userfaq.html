@@ -14,7 +14,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Add Student Details</title>
+    <title>FAQ</title>
 
     <meta name="description" content="" />
 
@@ -126,19 +126,19 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
-            <li class="menu-item">
+            <li class="menu-item ">
               <a href="userdashboard.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
-            <li class="menu-item active open">
+            <li class="menu-item ">
               <a href="userform.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Layouts">Add Details</div>
               </a>
             </li>
-            <li class="menu-item">
+            <li class="menu-item ">
               <a href="userblog.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
                 <div data-i18n="Basic">Blog</div>
@@ -150,17 +150,11 @@
                 <div data-i18n="Basic">Cluster</div>
               </a>
             </li>
-            <li class="menu-item">
-              <a href="userranking.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-star"></i>
-                <div data-i18n="Basic">Ranking</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a href="userfaq.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-check-square"></i>
-                <div data-i18n="Basic">FAQ's</div>
-              </a>
+            <li class="menu-item open active">
+                <a href="userfaq.html" class="menu-link">
+                  <i class="menu-icon tf-icons bx bx-check-square"></i>
+                  <div data-i18n="Basic">FAQ's</div>
+                </a>
             </li>
             <li class="menu-item">
               <a href="index.html" class="menu-link">
@@ -168,8 +162,6 @@
                 <div data-i18n="Basic">Log Out</div>
               </a>
             </li>
-
-            <!-- Components -->
           </ul>
         </aside>
         <!-- / Menu -->
@@ -203,99 +195,132 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">ADD/</span> EDIT DETAILS</h4>
-
-              <!-- Basic Layout -->
-              <div class="row">
-                <div class="col-xl">
-                  <div class="card mb-4">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                      <h5 class="mb-0">Enter Details</h5>
-                      <small class="text-muted float-end">for Student</small>
-                    </div>
-                    <div class="card-body">
-                      <form>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-fullname">Full Name</label>
-                          <input type="text" class="form-control" id="basic-default-fullname" placeholder="Student's Name" />
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-company">Roll-no</label>
-                          <input type="text" class="form-control" id="basic-default-company" placeholder="Student's Roll no" />
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-email">Email</label>
-                          <div class="input-group input-group-merge">
-                            <input
-                              type="text"
-                              id="basic-default-email"
-                              class="form-control"
-                              placeholder="Student@email.com"
-                              aria-label="john.doe"
-                              aria-describedby="basic-default-email2"
-                            />
-                            <span class="input-group-text" id="basic-default-email2"></span>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span>FAQ</h4>
+              <div class="row mb-5">
+                <div class="col-md mb-4 mb-md-0">
+                    <div class="accordion mt-3" id="accordionExample">
+                      <div class="card accordion-item active">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button
+                            type="button"
+                            class="accordion-button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#accordionOne"
+                            aria-expanded="true"
+                            aria-controls="accordionOne"
+                          >
+                          What is a student performance system?
+                          </button>
+                        </h2>
+  
+                        <div
+                          id="accordionOne"
+                          class="accordion-collapse collapse show"
+                          data-bs-parent="#accordionExample"
+                        >
+                          <div class="accordion-body">
+                            A student performance system is a software application or platform that allows educators to track, analyze and report on student performance data. It provides a comprehensive view of how students are progressing, identifying areas of strength and weakness.
                           </div>
-                          <div class="form-text">It is recommended to enter college email</div>
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-phone">Phone No</label>
-                          <input
-                            type="text"
-                            id="basic-default-phone"
-                            class="form-control phone-mask"
-                            placeholder="658 799 8941"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-message">Message</label>
-                          <textarea
-                            id="basic-default-message"
-                            class="form-control"
-                            placeholder="Hi, Do you have a moment to talk Joe?"
-                          ></textarea>
-                        </div>
-                        <div class="mb-3">
-                          <label for="exampleFormControlSelect1" class="form-label">Extra circular Activities</label>
-                          <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
-                            <option selected="">Select Position in a club /Sports Team</option>
-                            <option value="1">Volunteer/Team Member</option>
-                            <option value="2">Board Member /Team Captain</option>
-                            <option value="3">Chairperson</option>
-                          </select>
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-fullname">C.GPA</label>
-                          <input type="text" class="form-control" id="cgpa" placeholder="Cgpa until currnt Semester" />
                         </div>
                       </div>
-                        <div class="mb-3" style="width:max-content;text-align: left; width:100%; margin-left: 30px; display: flex;justify-content:left;">
-                          <label for="html5-number-input" class="col-md-2 col-form-label">Enter Number of Backlogs</label>
-                          <div class="col-md-10" style="width:30%;margin:10px 30px 0 0 ;">
-                            <input class="form-control" type="number" value="0" id="html5-number-input" max="20" min="0">
-                          </div>
-                          <label for="html5-number-input" class="col-md-2 col-form-label">Enter Number of Certificates</label>
-                          <div class="col-md-10" style="width:30%;margin:10px 30px 0 0; ">
-                            <input class="form-control" type="number" value="0" id="html5-number-input" max="20" min="0">
+                      <div class="card accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                          <button
+                            type="button"
+                            class="accordion-button collapsed"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#accordionTwo"
+                            aria-expanded="false"
+                            aria-controls="accordionTwo"
+                          >
+                          What are the benefits of using a student performance system?
+                          </button>
+                        </h2>
+                        <div
+                          id="accordionTwo"
+                          class="accordion-collapse collapse"
+                          aria-labelledby="headingTwo"
+                          data-bs-parent="#accordionExample"
+                        >
+                          <div class="accordion-body">
+                            A student performance system offers several benefits, including the ability to identify students who may be struggling and provide targeted support, track progress over time, and generate reports to share with parents and administrators.
                           </div>
                         </div>
-                        <div class="mb-3">
-                          <div>
-                            <h5 class="form-label" style="margin-left:30px;">Upload Certcificates</h5>
-                            <div class="input-group" style="max-width: 95%; margin: 30px;" >
-                              <input type="file" class="form-control" id="inputGroupFile02">
-                              <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                            </div>
+                      </div>
+                      <div class="card accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                          <button
+                            type="button"
+                            class="accordion-button collapsed"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#accordionThree"
+                            aria-expanded="false"
+                            aria-controls="accordionThree"
+                          >
+                          What features should a good student performance system have?
+                          </button>
+                        </h2>
+                        <div
+                          id="accordionThree"
+                          class="accordion-collapse collapse"
+                          aria-labelledby="headingThree"
+                          data-bs-parent="#accordionExample"
+                        >
+                          <div class="accordion-body">
+                            A good student performance system should have features such as student data management, assessment creation and delivery, progress monitoring, and reporting and analytics. It should also be user-friendly and easy to navigate.
                           </div>
                         </div>
-                        <br>
-                        <br>
-                        <button type="submit" class="btn btn-primary">Add Details</button>
-                      </form>
+                      </div>
+                      <div class="card accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                          <button
+                            type="button"
+                            class="accordion-button collapsed"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#accordionFour"
+                            aria-expanded="false"
+                            aria-controls="accordionFour"
+                          >
+                          How can educators use data from a student performance system to improve student outcomes?
+                          </button>
+                        </h2>
+                        <div
+                          id="accordionFour"
+                          class="accordion-collapse collapse"
+                          aria-labelledby="headingFour"
+                          data-bs-parent="#accordionExample"
+                        >
+                          <div class="accordion-body">
+                            Educators can use data from a student performance system to identify students who may need additional support, modify teaching strategies to better meet individual student needs, and track progress over time to determine the effectiveness of their instruction.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                          <button
+                            type="button"
+                            class="accordion-button collapsed"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#accordionFive"
+                            aria-expanded="false"
+                            aria-controls="accordionFive"
+                          >
+                          Is student data kept confidential in a student performance system?
+                          </button>
+                        </h2>
+                        <div
+                          id="accordionFive"
+                          class="accordion-collapse collapse"
+                          aria-labelledby="headingFive"
+                          data-bs-parent="#accordionExample"
+                        >
+                          <div class="accordion-body">
+                            Yes, student data is typically kept confidential in a student performance system. Data is protected by privacy laws such as FERPA and is only accessible by authorized users, such as teachers and administrators.
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
             </div>
             <!-- / Content -->
 
@@ -307,9 +332,7 @@
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
-                    made with ❤️ 
-                <div>
-  
+                  , made with ❤️ 
                 </div>
               </div>
             </footer>
@@ -327,9 +350,8 @@
     </div>
     <!-- / Layout wrapper -->
 
-
     <!-- Core JS -->
-    <!-- build:js ../assets/vendor/js/core.js -->
+    <!-- build:js assets/vendor/js/core.js -->
     <script src="../assets/vendor/libs/jquery/jquery.js"></script>
     <script src="../assets/vendor/libs/popper/popper.js"></script>
     <script src="../assets/vendor/js/bootstrap.js"></script>
@@ -339,6 +361,7 @@
     <!-- endbuild -->
 
     <!-- Vendors JS -->
+    <script src="../assets/vendor/libs/masonry/masonry.js"></script>
 
     <!-- Main JS -->
     <script src="../assets/js/main.js"></script>
