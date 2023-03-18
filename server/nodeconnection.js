@@ -104,7 +104,32 @@ app.post('/add_db',(req,res)=>{
 })
 
 
+// Code for Clustering
 
+app.post('/create_clusters',(req,res)=>{
+  const cluster=require('./cluster_code')
+  n=req.body.clusterInput
+  cluster(n)
+  .then((result) => {
+    const dataString = result;
+    const rows = dataString.split('\n');
+    const headers = rows[0].split(/\s+/); // Split headers by whitespace
+
+    const data = [];
+    for (let i = 1; i < rows.length-n-2; i++) {
+      const columns = rows[i].split(/\s+/); // Split columns by whitespace
+      const row = {};
+      for (let j = 0; j < columns.length; j++) {
+        row[headers[j]] = columns[j+1];
+      }
+      data.push(row);
+      }
+    res.send(data);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+})
 
 // Serve index.html as the root route
 app.get('/', (req, res) => {
