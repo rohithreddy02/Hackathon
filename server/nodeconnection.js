@@ -1,6 +1,9 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const { json } = require('body-parser')
 const app = express()
+const cors = require('cors')
+app.use(cors())
 
 // Use body-parser middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -106,17 +109,17 @@ app.post('/add_db',(req,res)=>{
 
 // Code for Clustering
 
-app.post('/create_clusters',(req,res)=>{
+app.get('/create_clusters',(req,res)=>{
   const cluster=require('./cluster_code')
   n=req.body.clusterInput
-  cluster(n)
+  cluster(3)
   .then((result) => {
     const dataString = result;
     const rows = dataString.split('\n');
     const headers = rows[0].split(/\s+/); // Split headers by whitespace
 
     const data = [];
-    for (let i = 1; i < rows.length-n-2; i++) {
+    for (let i = 1; i < rows.length-5; i++) {
       const columns = rows[i].split(/\s+/); // Split columns by whitespace
       const row = {};
       for (let j = 0; j < columns.length; j++) {
@@ -124,7 +127,7 @@ app.post('/create_clusters',(req,res)=>{
       }
       data.push(row);
       }
-    res.send(data);
+    res.json(data);
   })
   .catch((err) => {
     console.error(err);
