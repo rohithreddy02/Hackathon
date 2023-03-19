@@ -131,6 +131,7 @@ app.get('/usercount',(req,res)=>{
   }
   count().then((result) => {
     console.log(result);
+    res.send(result);
   })
   .catch((err) => {
     console.error(err);

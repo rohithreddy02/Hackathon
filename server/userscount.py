@@ -11,7 +11,9 @@ try:
     command='select count(username) from logindetails where admin="Yes";'
     cursr.execute(command)
     admincount=cursr.fetchone()[0]
-    print(studentcount,admincount)
+    l=[studentcount,admincount]
+    print(l)
+    sys.stdout.flush()
 except:
     db_connect.rollback()
 db_connect.close()
