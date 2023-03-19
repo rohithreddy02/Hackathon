@@ -11,14 +11,13 @@ app.use(bodyParser.urlencoded({ extended: false }))
 //Define route to handle submission of registration
 app.post('/check',(req,res)=>{
   var r=Object.values(req.body)
-  console.log(r);
+  const val=req.body.admin
   const username=r[0]
   const email=r[1]
   const password=r[2]
-  console.log(req.body);
-  function authen(username,email,password){
+  function authen(username,email,password,val){
     const { spawn }=require('child_process');
-    const py=spawn('python',['insertintodb.py',username,email,password]);
+    const py=spawn('python',['insertintodb.py',username,email,password,val]);
 
     return new Promise((resolve, reject) => {
       let result = '';
@@ -36,12 +35,12 @@ app.post('/check',(req,res)=>{
       });
     });
   }
-  authen(username,email,password).then((result) => {
+  authen(username,email,password,val).then((result) => {
     if(result=="Account Created"){
       res.sendFile(__dirname+"/html/index.html")
     }
     else if(result=="User Exist"){
-      res.sendFile(__dirname+"/html/index.html")
+      res.sendFile(__dirname+"/html/pages-misc-under-maintenance.html")
     }
   })
   .catch((err) => {
@@ -51,9 +50,7 @@ app.post('/check',(req,res)=>{
 
 // Define route to handle form submission
 app.post('/submit', (req, res) => {
-  // const {username,email,password}=req.body
-  var a=Object.values(req.body)
-  // console.log(req);
+  var a=Object.values(req.body) 
   const email=a[0]
   const password=a[1]
   //Authentication of Login details
@@ -112,6 +109,37 @@ app.get('/usercount',(req,res)=>{
   function count() {
     const { spawn } = require('child_process');
     const py = spawn('python', ['userscount.py']);
+    
+    return new Promise((resolve, reject) => {
+      let result = '';
+  
+      py.stdout.on('data', (data) => {
+        result += data.toString();
+      });
+  
+      py.stdout.on('end', () => {
+        resolve(result.trim());
+      });
+  
+      py.on('error', (err) => {
+        reject(err);
+      });
+    });
+  }
+  count().then((result) => {
+    res.send(result);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+
+})
+
+//Code for Average Sgpa
+app.get('/avggpa',(req,res)=>{
+  function count() {
+    const { spawn } = require('child_process');
+    const py = spawn('python', ['avggpa.py']);
     
     return new Promise((resolve, reject) => {
       let result = '';
