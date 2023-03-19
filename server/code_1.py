@@ -43,3 +43,4 @@ clustered_data['Rollno']=df2
 
 print(clustered_data)
 print(grouped_km)
+db_connect.close()

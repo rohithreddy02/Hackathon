@@ -2,12 +2,9 @@ clusterDisplay=document.querySelector('#clusterdetails')
 fetch('http://localhost:3000/create_clusters')
   .then(response => response.text())
   .then(data => {
-    console.log(typeof(data));
     const jsonData = JSON.parse(data);
-    console.log(jsonData);
-    console.log(typeof(jsonData));
     const table = document.createElement("table");
-
+    table.setAttribute("class", "table")
     // Create table headers
     const headers = table.createTHead();
     const headerRow = headers.insertRow(0);
