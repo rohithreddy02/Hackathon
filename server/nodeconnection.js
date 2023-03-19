@@ -15,6 +15,7 @@ app.post('/check',(req,res)=>{
   const username=r[0]
   const email=r[1]
   const password=r[2]
+  console.log(req.body);
   function authen(username,email,password){
     const { spawn }=require('child_process');
     const py=spawn('python',['insertintodb.py',username,email,password]);
@@ -204,6 +205,9 @@ app.get('/userdashboard.html', (req, res) => {
 app.use('/assets',express.static(__dirname+'/assets'))
 
 
+//for java-script code:
+
+app.use('/cluster-details',express.static(__dirname+'/html/cluster-details.html'))
 // Start the server
 
 app.listen(3000, () => {
