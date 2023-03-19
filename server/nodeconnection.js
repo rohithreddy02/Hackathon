@@ -85,7 +85,7 @@ app.post('/submit', (req, res) => {
       res.sendFile(__dirname+'/html/userdashboard.html')
     }
     else{
-      res.send("Invalid credentials")
+      res.sendFile(__dirname+'/html/pages-misc-under-maintenance.html')
     }
   })
   .catch((err) => {
@@ -107,7 +107,36 @@ app.post('/add_db',(req,res)=>{
   res.send("Added Files");
 })
 
+//Code for Usercount
+app.get('/usercount',(req,res)=>{
+  function count() {
+    const { spawn } = require('child_process');
+    const py = spawn('python', ['userscount.py']);
+    
+    return new Promise((resolve, reject) => {
+      let result = '';
+  
+      py.stdout.on('data', (data) => {
+        result += data.toString();
+      });
+  
+      py.stdout.on('end', () => {
+        resolve(result.trim());
+      });
+  
+      py.on('error', (err) => {
+        reject(err);
+      });
+    });
+  }
+  count().then((result) => {
+    console.log(result);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 
+})
 // Code for Clustering
 
 app.get('/create_clusters',(req,res)=>{
