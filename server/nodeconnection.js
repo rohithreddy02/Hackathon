@@ -1,6 +1,9 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const { json } = require('body-parser')
 const app = express()
+const cors = require('cors')
+app.use(cors())
 
 // Use body-parser middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -8,13 +11,13 @@ app.use(bodyParser.urlencoded({ extended: false }))
 //Define route to handle submission of registration
 app.post('/check',(req,res)=>{
   var r=Object.values(req.body)
-  console.log(r);
+  const val=req.body.admin
   const username=r[0]
   const email=r[1]
   const password=r[2]
-  function authen(username,email,password){
+  function authen(username,email,password,val){
     const { spawn }=require('child_process');
-    const py=spawn('python',['insertintodb.py',username,email,password]);
+    const py=spawn('python',['insertintodb.py',username,email,password,val]);
 
     return new Promise((resolve, reject) => {
       let result = '';
@@ -32,12 +35,12 @@ app.post('/check',(req,res)=>{
       });
     });
   }
-  authen(username,email,password).then((result) => {
+  authen(username,email,password,val).then((result) => {
     if(result=="Account Created"){
       res.sendFile(__dirname+"/html/index.html")
     }
     else if(result=="User Exist"){
-      res.sendFile(__dirname+"/html/index.html")
+      res.sendFile(__dirname+"/html/pages-misc-under-maintenance.html")
     }
   })
   .catch((err) => {
@@ -47,9 +50,7 @@ app.post('/check',(req,res)=>{
 
 // Define route to handle form submission
 app.post('/submit', (req, res) => {
-  // const {username,email,password}=req.body
-  var a=Object.values(req.body)
-  // console.log(req);
+  var a=Object.values(req.body) 
   const email=a[0]
   const password=a[1]
   //Authentication of Login details
@@ -81,7 +82,7 @@ app.post('/submit', (req, res) => {
       res.sendFile(__dirname+'/html/userdashboard.html')
     }
     else{
-      res.send("Invalid credentials")
+      res.sendFile(__dirname+'/html/pages-misc-under-maintenance.html')
     }
   })
   .catch((err) => {
@@ -103,8 +104,93 @@ app.post('/add_db',(req,res)=>{
   res.send("Added Files");
 })
 
+//Code for Usercount
+app.get('/usercount',(req,res)=>{
+  function count() {
+    const { spawn } = require('child_process');
+    const py = spawn('python', ['userscount.py']);
+    
+    return new Promise((resolve, reject) => {
+      let result = '';
+  
+      py.stdout.on('data', (data) => {
+        result += data.toString();
+      });
+  
+      py.stdout.on('end', () => {
+        resolve(result.trim());
+      });
+  
+      py.on('error', (err) => {
+        reject(err);
+      });
+    });
+  }
+  count().then((result) => {
+    res.send(result);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 
+})
 
+//Code for Average Sgpa
+app.get('/avggpa',(req,res)=>{
+  function count() {
+    const { spawn } = require('child_process');
+    const py = spawn('python', ['avggpa.py']);
+    
+    return new Promise((resolve, reject) => {
+      let result = '';
+  
+      py.stdout.on('data', (data) => {
+        result += data.toString();
+      });
+  
+      py.stdout.on('end', () => {
+        resolve(result.trim());
+      });
+  
+      py.on('error', (err) => {
+        reject(err);
+      });
+    });
+  }
+  count().then((result) => {
+    res.send(result);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+
+})
+// Code for Clustering
+
+app.get('/create_clusters',(req,res)=>{
+  const cluster=require('./cluster_code')
+  n=req.body.clusterInput
+  cluster(3)
+  .then((result) => {
+    const dataString = result;
+    const rows = dataString.split('\n');
+    const headers = rows[0].split(/\s+/); // Split headers by whitespace
+
+    const data = [];
+    for (let i = 1; i < rows.length-5; i++) {
+      const columns = rows[i].split(/\s+/); // Split columns by whitespace
+      const row = {};
+      for (let j = 0; j < columns.length; j++) {
+        row[headers[j]] = columns[j+1];
+      }
+      data.push(row);
+      }
+    res.json(data);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+})
 
 // Serve index.html as the root route
 app.get('/', (req, res) => {
@@ -176,6 +262,9 @@ app.get('/userdashboard.html', (req, res) => {
 app.use('/assets',express.static(__dirname+'/assets'))
 
 
+//for java-script code:
+
+app.use('/cluster-details',express.static(__dirname+'/html/cluster-details.html'))
 // Start the server
 
 app.listen(3000, () => {
