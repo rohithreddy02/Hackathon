@@ -39,12 +39,12 @@ import smtplib
 msg = email.message.Message()
 
 # Set the message headers
-msg['Subject'] = 'Test message'
+msg['Subject'] = 'SSPS Admin'
 msg['From'] = 'hackathon73@gmail.com'
-msg['To'] = 'srujansk14@gmail.com'
+msg['To'] = rollno+'@sreenidhi.edu.in'
 
 # Set the message content
-msg.set_payload('This is a test message.')
+msg.set_payload('Hi '+name+' we have received your details successfully\n\nThank you for using our website\nRegards SSPS Admin')
 
 # Send the message
 smtp_obj = smtplib.SMTP('smtp.gmail.com', 587)

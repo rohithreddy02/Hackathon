@@ -23,3 +23,24 @@ try:
 except:
     db_connect.rollback()
 db_connect.close()
+
+import email.message
+import smtplib
+
+# Create a message object
+msg = email.message.Message()
+
+# Set the message headers
+msg['Subject'] = 'SSPS Admin'
+msg['From'] = 'hackathon73@gmail.com'
+msg['To'] = username+'@sreenidhi.edu.in'
+
+# Set the message content
+msg.set_payload('Hi '+username+' your account is created successfully\n\nThank you for using our website\nRegards SSPS Admin')
+
+# Send the message
+smtp_obj = smtplib.SMTP('smtp.gmail.com', 587)
+smtp_obj.starttls()
+smtp_obj.login('hackathon73@gmail.com', 'xrzdcgfyysxihzpd')
+smtp_obj.sendmail(msg['From'], [msg['To']], msg.as_string())
+smtp_obj.quit()

@@ -14,7 +14,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>User Dashboard </title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <meta name="description" content="" />
@@ -203,9 +203,308 @@
           <div class="content-wrapper">
             <!-- Content -->
             <div class="container-xxl flex-grow-1 container-p-y">
+              <h3 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">USER /</span> DASHBOARD</h3>
+            <div class="col-lg-8 mb-4 order-0">
+              <div class="card">
+                <div class="d-flex align-items-end row">
+                  <div class="col-sm-7">
+                    <div class="card-body">
+                      <h5 class="card-title text-primary">Welcome Back!  🎉</h5>
+                      <p class="mb-4">
+                        You have done <span class="fw-bold">72%</span> more sales today. Check your new badge in
+                        your profile.
+                      </p>
+
+                      
+                    </div>
+                  </div>
+                  <div class="col-sm-5 text-center text-sm-left">
+                    <div class="card-body pb-0 px-0 px-md-4">
+                      <img
+                        src="../assets/img/illustrations/man-with-laptop-light.png"
+                        height="140"
+                        alt="View Badge User"
+                        data-app-dark-img="illustrations/man-with-laptop-dark.png"
+                        data-app-light-img="illustrations/man-with-laptop-light.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h3 class="fw-bold py-3 mb-4"> USER INFO</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <div class="card-title d-flex align-items-start justify-content-between">
+                      
+                    </div>
+                    <h3 class="card-title mb-2">CGPA</h3>
+                    <h2 id="studentcount"></h2>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <div class="card-title d-flex align-items-start justify-content-between">
+                      
+                    </div>
+                    <h3 class="card-title mb-2">Total Backlogs</h3>
+                    <h2 id="admincount"></h2>
+                  </div>
+                </div>
+              </div> 
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <div class="card-title d-flex align-items-start justify-content-between">
+                      
+                    </div>
+                    <h3 class="card-title mb-2">No of Certificates Approved</h3>
+                    <h2 id="studentcount"></h2>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <div class="card-title d-flex align-items-start justify-content-between">
+                      
+                    </div>
+                    <h3 class="card-title mb-2">Position in Extra-circular</h3>
+                    <h2 id="admincount"></h2>
+                  </div>
+                </div>
+              </div> 
+            </div>
+
+            <div class="row">
+              <!-- Order Statistics -->
+              <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
+                <div class="card h-100">
+                  <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                  
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-3" style="position: relative;">
+                      <div class="d-flex flex-column align-items-center gap-1">
+                        <h2 class="mb-2">SGPA</h2>
+                        <br>
+                      </div>
+                    <br>
+                    <div class="resize-triggers"><div class="expand-trigger"><div style="width: 298px; height: 139px;"></div></div><div class="contract-trigger"></div></div></div>
+                    <ul class="p-0 m-0">
+                      <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0">
+                          <img src="../assets/img/icons/unicons/eaxmslogo.png" alt="chart success" class="rounded">
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            <h5 class="mb-0">Semester-1</h5>
+                            
+                          </div>
+                          <div class="user-progress">
+                            <h6 id="us1"></h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0">
+                          <img src="../assets/img/icons/unicons/eaxmslogo.png" alt="chart success" class="rounded">
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            <h5 class="mb-0">Semester-2</h5>
+                            
+                          </div>
+                          <div class="user-progress">
+                            <h6 id="us2"></h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0">
+                          <img src="../assets/img/icons/unicons/eaxmslogo.png" alt="chart success" class="rounded">
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            <h5 class="mb-0">Semester-3</h5>
+                            
+                          </div>
+                          <div class="user-progress">
+                            <h6 id="us3"></h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex">
+                        <div class="avatar flex-shrink-0">
+                          <img src="../assets/img/icons/unicons/eaxmslogo.png" alt="chart success" class="rounded">
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            <h5 class="mb-0">Semester-4</h5>
+                            
+                          </div>
+                          <div class="user-progress">
+                            <h6 id="us4"></h6>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                
+              </div>
+              <!--/ Order Statistics -->
+              <div class="col-md-6 col-lg-4 order-2 mb-4">
+                <div class="card h-100">
+                  <div class="card-header d-flex align-items-center justify-content-between">
+                    <h3 class="card-title m-0 me-2">No of Backlogs in Each Semester</h3>
+                    
+                  </div>
+                  <div class="card-body">
+                    <ul class="p-0 m-0">
+                      <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                          <img src="../assets/img/icons/unicons/eaxmslogo.png" alt="User" class="rounded">
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            
+                            <h5 class="mb-0">Semester-1</h5>
+                          </div>
+                          <div class="user-progress d-flex align-items-center gap-1">
+                            <h6 id="ub1"></h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                          <img src="../assets/img/icons/unicons/eaxmslogo.png" alt="User" class="rounded">
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            
+                            <h5 class="mb-0">Semester-2</h5>
+                          </div>
+                          <div class="user-progress d-flex align-items-center gap-1">
+                            <h6 id="ub2"></h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                          <img src="../assets/img/icons/unicons/eaxmslogo.png" alt="User" class="rounded">
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            
+                            <h5 class="mb-0">Semester-3</h5>
+                          </div>
+                          <div class="user-progress d-flex align-items-center gap-1">
+                            <h6 id="ub3"></h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                          <img src="../assets/img/icons/unicons/eaxmslogo.png" alt="User" class="rounded">
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            
+                            <h5 class="mb-0">Semester-4</h5>
+                          </div>
+                          <div class="user-progress d-flex align-items-center gap-1">
+                            <h6 id="ub4"></h6>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div> 
+
+              <div class="col-md-6 col-lg-4 order-2 mb-4">
+                <div class="card h-100">
+                  <div class="card-header d-flex align-items-center justify-content-between">
+                    <h3 class="card-title m-0 me-2">No of Backlogs in Each Semester</h3>
+                    
+                  </div>
+                  <div class="card-body">
+                    <ul class="p-0 m-0">
+                      <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                          <img src="../assets/img/icons/unicons/eaxmslogo.png" alt="User" class="rounded">
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            
+                            <h5 class="mb-0">Semester-1</h5>
+                          </div>
+                          <div class="user-progress d-flex align-items-center gap-1">
+                            <h6 id="ub1"></h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                          <img src="../assets/img/icons/unicons/eaxmslogo.png" alt="User" class="rounded">
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            
+                            <h5 class="mb-0">Semester-2</h5>
+                          </div>
+                          <div class="user-progress d-flex align-items-center gap-1">
+                            <h6 id="ub2"></h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                          <img src="../assets/img/icons/unicons/eaxmslogo.png" alt="User" class="rounded">
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            
+                            <h5 class="mb-0">Semester-3</h5>
+                          </div>
+                          <div class="user-progress d-flex align-items-center gap-1">
+                            <h6 id="ub3"></h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                          <img src="../assets/img/icons/unicons/eaxmslogo.png" alt="User" class="rounded">
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            
+                            <h5 class="mb-0">Semester-4</h5>
+                          </div>
+                          <div class="user-progress d-flex align-items-center gap-1">
+                            <h6 id="ub4"></h6>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div> 
+            </div>
             <!-- Basic Bootstrap Table -->
+            <h3 class="fw-bold py-3 mb-4"> CR's and Co-Ordinators Info</h3>
             <div class="card">
-              <h5 class="card-header">CR's And Class Co ordinator's information</h5>
+              
               <div class="table-responsive text-nowrap">
                 <table class="table">
                   <thead>
