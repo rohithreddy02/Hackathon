@@ -52,3 +52,21 @@ smtp_obj.starttls()
 smtp_obj.login('hackathon73@gmail.com', 'xrzdcgfyysxihzpd')
 smtp_obj.sendmail(msg['From'], [msg['To']], msg.as_string())
 smtp_obj.quit()
+
+# Create a message object
+msg = email.message.Message()
+
+# Set the message headers
+msg['Subject'] = 'SSPS Admin'
+msg['From'] = 'hackathon73@gmail.com'
+msg['To'] = 'snist.ssps@sreenidhi.edu.in'
+
+# Set the message content
+msg.set_payload('Hi '+rollno+'entered details verify them\n')
+
+# Send the message
+smtp_obj = smtplib.SMTP('smtp.gmail.com', 587)
+smtp_obj.starttls()
+smtp_obj.login('hackathon73@gmail.com', 'xrzdcgfyysxihzpd')
+smtp_obj.sendmail(msg['From'], [msg['To']], msg.as_string())
+smtp_obj.quit()

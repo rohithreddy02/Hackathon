@@ -16,7 +16,7 @@ app.post('/check',(req,res)=>{
   const password=r[2]
   function authen(username,email,password){
     const { spawn }=require('child_process');
-    const py=spawn('python',['insertintodb.py',username,email,password,val]);
+    const py=spawn('python',['insertintodb.py',username,email,password]);
 
     return new Promise((resolve, reject) => {
       let result = '';
@@ -87,6 +87,36 @@ app.post('/submit', (req, res) => {
   .catch((err) => {
     console.error(err);
   });
+
+  app.get('/userdetails',(req,res)=>{
+    function count(username) {
+      const { spawn } = require('child_process');
+      const py = spawn('python', ['userdetails.py',username]);
+      
+      return new Promise((resolve, reject) => {
+        let result = '';
+    
+        py.stdout.on('data', (data) => {
+          result += data.toString();
+        });
+    
+        py.stdout.on('end', () => {
+          resolve(result.trim());
+        });
+    
+        py.on('error', (err) => {
+          reject(err);
+        });
+      });
+    }
+    count(username).then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+  
+  })
 })
 
 
@@ -100,7 +130,7 @@ app.post('/add_db',(req,res)=>{
   py.stderr.on('data', (data) => {
     console.error(`Error from Python: ${data}`);
   });
-  res.send("Added Files");
+  
 })
 
 //Code for Usercount
