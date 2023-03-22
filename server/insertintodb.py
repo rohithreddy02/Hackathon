@@ -7,10 +7,7 @@ cursr=db_connect.cursor()
 username=str(sys.argv[1])
 email=str(sys.argv[2])
 password=str(sys.argv[3])
-if str(sys.argv[4]==1):
-    admin="Yes"
-else:
-    admin="No"
+admin="No"
 try:
     cursr.execute('select count(username) from logindetails where username="'+username+'";')
     count=cursr.fetchone()[0]

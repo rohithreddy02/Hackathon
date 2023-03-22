@@ -11,11 +11,11 @@ app.use(bodyParser.urlencoded({ extended: false }))
 //Define route to handle submission of registration
 app.post('/check',(req,res)=>{
   var r=Object.values(req.body)
-  const val=req.body.admin
+
   const username=r[0]
   const email=r[1]
   const password=r[2]
-  function authen(username,email,password,val){
+  function authen(username,email,password){
     const { spawn }=require('child_process');
     const py=spawn('python',['insertintodb.py',username,email,password,val]);
 
@@ -35,7 +35,7 @@ app.post('/check',(req,res)=>{
       });
     });
   }
-  authen(username,email,password,val).then((result) => {
+  authen(username,email,password).then((result) => {
     if(result=="Account Created"){
       res.sendFile(__dirname+"/html/index.html")
     }
