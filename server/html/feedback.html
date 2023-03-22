@@ -14,7 +14,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Add Student Details</title>
+    <title>Feedback</title>
 
     <meta name="description" content="" />
 
@@ -132,14 +132,14 @@
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
-            <li class="menu-item active open">
+            <li class="menu-item ">
               <a href="userform.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Layouts">Add Details</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="userblog.html" class="menu-link">
+              <a href="blog.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
                 <div data-i18n="Basic">Blog</div>
               </a>
@@ -156,12 +156,13 @@
                 <div data-i18n="Basic">Ranking</div>
               </a>
             </li>
-            <li class="menu-item">
-              <a href="userfaq.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-check-square"></i>
-                <div data-i18n="Basic">FAQ's</div>
-              </a>
+            <li class="menu-item active open">
+                <a href="feedback.html" class="menu-link">
+                  <i class="menu-icon tf-icons bx bx-detail"></i>
+                  <div data-i18n="Basic">Feedback Form</div>
+                </a>
             </li>
+
             <li class="menu-item">
               <a href="index.html" class="menu-link">
                 <i class="bx bx-power-off me-2"></i>
@@ -203,7 +204,7 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">ADD/</span> EDIT DETAILS</h4>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span>Feedback Form</h4>
 
               <!-- Basic Layout -->
               <div class="row">
@@ -236,7 +237,6 @@
                             />
                             <span class="input-group-text" id="basic-default-email2"></span>
                           </div>
-                          <div class="form-text">It is recommended to enter college email</div>
                         </div>
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-phone">Phone No</label>
@@ -252,45 +252,16 @@
                           <textarea
                             id="basic-default-message"
                             class="form-control"
-                            placeholder="Hi, Do you have a moment to talk Joe?"
+                            placeholder="Enter your Message"
                           ></textarea>
                         </div>
-                        <div class="mb-3">
-                          <label for="exampleFormControlSelect1" class="form-label">Extra circular Activities</label>
-                          <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
-                            <option selected="">Select Position in a club /Sports Team</option>
-                            <option value="1">Volunteer/Team Member</option>
-                            <option value="2">Board Member /Team Captain</option>
-                            <option value="3">Chairperson</option>
-                          </select>
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-fullname">C.GPA</label>
-                          <input type="text" class="form-control" id="cgpa" placeholder="Cgpa until currnt Semester" />
-                        </div>
+                        
+                        
                       </div>
-                        <div class="mb-3" style="width:max-content;text-align: left; width:100%; margin-left: 30px; display: flex;justify-content:left;">
-                          <label for="html5-number-input" class="col-md-2 col-form-label">Enter Number of Backlogs</label>
-                          <div class="col-md-10" style="width:30%;margin:10px 30px 0 0 ;">
-                            <input class="form-control" type="number" value="0" id="html5-number-input" max="20" min="0">
-                          </div>
-                          <label for="html5-number-input" class="col-md-2 col-form-label">Enter Number of Certificates</label>
-                          <div class="col-md-10" style="width:30%;margin:10px 30px 0 0; ">
-                            <input class="form-control" type="number" value="0" id="html5-number-input" max="20" min="0">
-                          </div>
-                        </div>
-                        <div class="mb-3">
-                          <div>
-                            <h5 class="form-label" style="margin-left:30px;">Upload Certcificates</h5>
-                            <div class="input-group" style="max-width: 95%; margin: 30px;" >
-                              <input type="file" class="form-control" id="inputGroupFile02">
-                              <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                            </div>
-                          </div>
-                        </div>
+                    
                         <br>
                         <br>
-                        <button type="submit" class="btn btn-primary">Add Details</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                       </form>
                     </div>
                   </div>
