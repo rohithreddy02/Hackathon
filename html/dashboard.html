@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+
+<!-- =========================================================
+* Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
+==============================================================
+
+* Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/
+* Created by: ThemeSelection
+* License: You must have a valid license purchased in order to legally use the theme for your project.
+* Copyright ThemeSelection (https://themeselection.com)
+
+=========================================================
+ -->
+<!-- beautify ignore:start -->
+<html
+  lang="en"
+  class="light-style layout-menu-fixed"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="../assets/"
+  data-template="vertical-menu-template-free"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+
+    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
+
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="../assets/vendor/js/helpers.js"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="../assets/js/config.js"></script>
+  </head>
+
+  <body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+        <!-- Menu -->
+
+        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+          <div class="app-brand demo">
+            <a href="dashboard.html" class="app-brand-link">
+              <span class="app-brand-logo demo">
+                <svg
+                  width="25"
+                  viewBox="0 0 25 42"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs>
+                    <path
+                      d="M13.7918663,0.358365126 L3.39788168,7.44174259 C0.566865006,9.69408886 -0.379795268,12.4788597 0.557900856,15.7960551 C0.68998853,16.2305145 1.09562888,17.7872135 3.12357076,19.2293357 C3.8146334,19.7207684 5.32369333,20.3834223 7.65075054,21.2172976 L7.59773219,21.2525164 L2.63468769,24.5493413 C0.445452254,26.3002124 0.0884951797,28.5083815 1.56381646,31.1738486 C2.83770406,32.8170431 5.20850219,33.2640127 7.09180128,32.5391577 C8.347334,32.0559211 11.4559176,30.0011079 16.4175519,26.3747182 C18.0338572,24.4997857 18.6973423,22.4544883 18.4080071,20.2388261 C17.963753,17.5346866 16.1776345,15.5799961 13.0496516,14.3747546 L10.9194936,13.4715819 L18.6192054,7.984237 L13.7918663,0.358365126 Z"
+                      id="path-1"
+                    ></path>
+                    <path
+                      d="M5.47320593,6.00457225 C4.05321814,8.216144 4.36334763,10.0722806 6.40359441,11.5729822 C8.61520715,12.571656 10.0999176,13.2171421 10.8577257,13.5094407 L15.5088241,14.433041 L18.6192054,7.984237 C15.5364148,3.11535317 13.9273018,0.573395879 13.7918663,0.358365126 C13.5790555,0.511491653 10.8061687,2.3935607 5.47320593,6.00457225 Z"
+                      id="path-3"
+                    ></path>
+                    <path
+                      d="M7.50063644,21.2294429 L12.3234468,23.3159332 C14.1688022,24.7579751 14.397098,26.4880487 13.008334,28.506154 C11.6195701,30.5242593 10.3099883,31.790241 9.07958868,32.3040991 C5.78142938,33.4346997 4.13234973,34 4.13234973,34 C4.13234973,34 2.75489982,33.0538207 2.37032616e-14,31.1614621 C-0.55822714,27.8186216 -0.55822714,26.0572515 -4.05231404e-15,25.8773518 C0.83734071,25.6075023 2.77988457,22.8248993 3.3049379,22.52991 C3.65497346,22.3332504 5.05353963,21.8997614 7.50063644,21.2294429 Z"
+                      id="path-4"
+                    ></path>
+                    <path
+                      d="M20.6,7.13333333 L25.6,13.8 C26.2627417,14.6836556 26.0836556,15.9372583 25.2,16.6 C24.8538077,16.8596443 24.4327404,17 24,17 L14,17 C12.8954305,17 12,16.1045695 12,15 C12,14.5672596 12.1403557,14.1461923 12.4,13.8 L17.4,7.13333333 C18.0627417,6.24967773 19.3163444,6.07059163 20.2,6.73333333 C20.3516113,6.84704183 20.4862915,6.981722 20.6,7.13333333 Z"
+                      id="path-5"
+                    ></path>
+                  </defs>
+                  <g id="g-app-brand" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Brand-Logo" transform="translate(-27.000000, -15.000000)">
+                      <g id="Icon" transform="translate(27.000000, 15.000000)">
+                        <g id="Mask" transform="translate(0.000000, 8.000000)">
+                          <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                          </mask>
+                          <use fill="#696cff" xlink:href="#path-1"></use>
+                          <g id="Path-3" mask="url(#mask-2)">
+                            <use fill="#696cff" xlink:href="#path-3"></use>
+                            <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-3"></use>
+                          </g>
+                          <g id="Path-4" mask="url(#mask-2)">
+                            <use fill="#696cff" xlink:href="#path-4"></use>
+                            <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-4"></use>
+                          </g>
+                        </g>
+                        <g
+                          id="Triangle"
+                          transform="translate(19.000000, 11.000000) rotate(-300.000000) translate(-19.000000, -11.000000) "
+                        >
+                          <use fill="#696cff" xlink:href="#path-5"></use>
+                          <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-5"></use>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+              <span class="app-brand-text demo menu-text fw-bolder ms-2">SSPS</span>
+            </a>
+
+            <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+              <i class="bx bx-chevron-left bx-sm align-middle"></i>
+            </a>
+          </div>
+
+          <div class="menu-inner-shadow"></div>
+
+          <ul class="menu-inner py-1">
+            <!-- Dashboard -->
+            <li class="menu-item open active ">
+              <a href="dashboard.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Analytics">Dashboard</div>
+              </a>
+            </li>
+            <li class="menu-item ">
+              <a href="form.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Form Layouts">Add Details</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="blog.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="Basic">Blog</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="cluster.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-cube-alt"></i>
+                <div data-i18n="Basic">Cluster</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ranking.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-star"></i>
+                <div data-i18n="Basic">Ranking</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="index.html" class="menu-link">
+                <i class="bx bx-power-off me-2"></i>
+                <div data-i18n="Basic">Log Out</div>
+              </a>
+            </li>
+          </ul>
+        </aside>
+        <!-- / Menu -->
+
+        <!-- Layout container -->
+        <div class="layout-page">
+          <!-- Navbar -->
+
+          <nav
+            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+            id="layout-navbar"
+          >
+            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+              <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                <i class="bx bx-menu bx-sm"></i>
+              </a>
+            </div>
+
+            <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+              <!-- Search -->
+              <div class="navbar-nav align-items-center">
+                <h1 class="bg-label" style="margin-top: 15px;margin-left: 60px;">SSPS ADMIN</h1>
+              </div>
+            </div>
+          </nav>
+          
+          <img src="data:image/webp;base64,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">
+          <!-- / Navbar -->
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            <!-- Content -->
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <div class="row">
+                <!-- <div class="col-lg-8 mb-4 order-0">
+                  <div class="card">
+                    <div class="d-flex align-items-end row">
+                      <div class="col-sm-7">
+                        <div class="card-body">
+                          <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
+                          <p class="mb-4">
+                            You have done <span class="fw-bold">72%</span> more sales today. Check your new badge in
+                            your profile.
+                          </p>
+
+                          <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
+                        </div>
+                      </div>
+                      <div class="col-sm-5 text-center text-sm-left">
+                        <div class="card-body pb-0 px-0 px-md-4">
+                          <img
+                            src="../assets/img/illustrations/man-with-laptop-light.png"
+                            height="140"
+                            alt="View Badge User"
+                            data-app-dark-img="illustrations/man-with-laptop-dark.png"
+                            data-app-light-img="illustrations/man-with-laptop-light.png"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                <!-- start -->
+                <!-- <div class="col-lg-4 col-md-4 order-1">
+                  <div class="row">
+                    <div class="col-lg-6 col-md-12 col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                              <img
+                                src="../assets/img/icons/unicons/chart-success.png"
+                                alt="chart success"
+                                class="rounded"
+                              />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt3"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                          <span class="fw-semibold d-block mb-1">Profit</span>
+                          <h3 class="card-title mb-2">$12,628</h3>
+                          <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +72.80%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                              <img
+                                src="../assets/img/icons/unicons/wallet-info.png"
+                                alt="Credit Card"
+                                class="rounded"
+                              />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt6"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
+                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                          <span>Sales</span>
+                          <h3 class="card-title text-nowrap mb-1">$4,679</h3>
+                          <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.42%</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                <!-- Total Revenue -->
+                <!-- <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
+                  <div class="card">
+                    <div class="row row-bordered g-0">
+                      <div class="col-md-8">
+                        <h5 class="card-header m-0 me-2 pb-3">Total Revenue</h5>
+                        <div id="totalRevenueChart" class="px-2"></div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="card-body">
+                          <div class="text-center">
+                            <div class="dropdown">
+                              <button
+                                class="btn btn-sm btn-outline-primary dropdown-toggle"
+                                type="button"
+                                id="growthReportId"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                2022
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="growthReportId">
+                                <a class="dropdown-item" href="javascript:void(0);">2021</a>
+                                <a class="dropdown-item" href="javascript:void(0);">2020</a>
+                                <a class="dropdown-item" href="javascript:void(0);">2019</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="growthChart"></div>
+                        <div class="text-center fw-semibold pt-3 mb-2">62% Company Growth</div>
+
+                        <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">
+                          <div class="d-flex">
+                            <div class="me-2">
+                              <span class="badge bg-label-primary p-2"><i class="bx bx-dollar text-primary"></i></span>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <small>2022</small>
+                              <h6 class="mb-0">$32.5k</h6>
+                            </div>
+                          </div>
+                          <div class="d-flex">
+                            <div class="me-2">
+                              <span class="badge bg-label-info p-2"><i class="bx bx-wallet text-info"></i></span>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <small>2021</small>
+                              <h6 class="mb-0">$41.2k</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                <!--/ Total Revenue -->
+                <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
+                  <div class="row">
+                    <!-- <div class="col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                              <img src="../assets/img/icons/unicons/paypal.png" alt="Credit Card" class="rounded" />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt4"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt4">
+                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                          <span class="d-block mb-1">Payments</span>
+                          <h3 class="card-title text-nowrap mb-2">$2,456</h3>
+                          <small class="text-danger fw-semibold"><i class="bx bx-down-arrow-alt"></i> -14.82%</small>
+                        </div>
+                      </div>
+                    </div> -->
+                    <!-- <div class="col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                              <img src="../assets/img/icons/unicons/cc-primary.png" alt="Credit Card" class="rounded" />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt1"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+                              <div class="dropdown-menu" aria-labelledby="cardOpt1">
+                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                          <span class="fw-semibold d-block mb-1">Transactions</span>
+                          <h3 class="card-title mb-2">$14,857</h3>
+                          <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.14%</small>
+                        </div>
+                      </div>
+                    </div> -->
+                    <!-- </div>
+    <div class="row"> -->
+                    <!-- Total Revenue -->
+                <!-- <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
+                  <div class="card">
+                    <div class="row row-bordered g-0">
+                      <div class="col-md-8">
+                        <h5 class="card-header m-0 me-2 pb-3">Total Revenue</h5>
+                        <div id="totalRevenueChart" class="px-2"></div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="card-body">
+                          <div class="text-center">
+                            <div class="dropdown">
+                              <button
+                                class="btn btn-sm btn-outline-primary dropdown-toggle"
+                                type="button"
+                                id="growthReportId"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                2022
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="growthReportId">
+                                <a class="dropdown-item" href="javascript:void(0);">2021</a>
+                                <a class="dropdown-item" href="javascript:void(0);">2020</a>
+                                <a class="dropdown-item" href="javascript:void(0);">2019</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="growthChart"></div>
+                        <div class="text-center fw-semibold pt-3 mb-2">62% Company Growth</div>
+
+                        <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">
+                          <div class="d-flex">
+                            <div class="me-2">
+                              <span class="badge bg-label-primary p-2"><i class="bx bx-dollar text-primary"></i></span>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <small>2022</small>
+                              <h6 class="mb-0">$32.5k</h6>
+                            </div>
+                          </div>
+                          <div class="d-flex">
+                            <div class="me-2">
+                              <span class="badge bg-label-info p-2"><i class="bx bx-wallet text-info"></i></span>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <small>2021</small>
+                              <h6 class="mb-0">$41.2k</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                <!--/ Total Revenue -->
+                    <!-- <div class="col-12 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
+                            <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
+                              <div class="card-title">
+                                <h5 class="text-nowrap mb-2">Profile Report</h5>
+                                <span class="badge bg-label-warning rounded-pill">Year 2021</span>
+                              </div>
+                              <div class="mt-sm-auto">
+                                <small class="text-success text-nowrap fw-semibold"
+                                  ><i class="bx bx-chevron-up"></i> 68.2%</small
+                                >
+                                <h3 class="mb-0">$84,686k</h3>
+                              </div>
+                            </div>
+                            <div id="profileReportChart"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="row"> -->
+                <!-- Order Statistics -->
+                <!-- <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                      <div class="card-title mb-0">
+                        <h5 class="m-0 me-2">Order Statistics</h5>
+                        <small class="text-muted">42.82k Total Sales</small>
+                      </div>
+                      <div class="dropdown">
+                        <button
+                          class="btn p-0"
+                          type="button"
+                          id="orederStatistics"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="orederStatistics">
+                          <a class="dropdown-item" href="javascript:void(0);">Select All</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex flex-column align-items-center gap-1">
+                          <h2 class="mb-2">8,258</h2>
+                          <span>Total Orders</span>
+                        </div>
+                        <div id="orderStatisticsChart"></div>
+                      </div>
+                      <ul class="p-0 m-0">
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-primary"
+                              ><i class="bx bx-mobile-alt"></i
+                            ></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Electronic</h6>
+                              <small class="text-muted">Mobile, Earbuds, TV</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold">82.5k</small>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-success"><i class="bx bx-closet"></i></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Fashion</h6>
+                              <small class="text-muted">T-shirt, Jeans, Shoes</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold">23.8k</small>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-info"><i class="bx bx-home-alt"></i></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Decor</h6>
+                              <small class="text-muted">Fine Art, Dining</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold">849k</small>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-secondary"
+                              ><i class="bx bx-football"></i
+                            ></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Sports</h6>
+                              <small class="text-muted">Football, Cricket Kit</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold">99</small>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div> -->
+                <!--/ Order Statistics -->
+
+                <!-- Expense Overview -->
+                <!-- <div class="col-md-6 col-lg-4 order-1 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <ul class="nav nav-pills" role="tablist">
+                        <li class="nav-item">
+                          <button
+                            type="button"
+                            class="nav-link active"
+                            role="tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#navs-tabs-line-card-income"
+                            aria-controls="navs-tabs-line-card-income"
+                            aria-selected="true"
+                          >
+                            Income
+                          </button>
+                        </li>
+                        <li class="nav-item">
+                          <button type="button" class="nav-link" role="tab">Expenses</button>
+                        </li>
+                        <li class="nav-item">
+                          <button type="button" class="nav-link" role="tab">Profit</button>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="card-body px-0">
+                      <div class="tab-content p-0">
+                        <div class="tab-pane fade show active" id="navs-tabs-line-card-income" role="tabpanel">
+                          <div class="d-flex p-4 pt-3">
+                            <div class="avatar flex-shrink-0 me-3">
+                              <img src="../assets/img/icons/unicons/wallet.png" alt="User" />
+                            </div>
+                            <div>
+                              <small class="text-muted d-block">Total Balance</small>
+                              <div class="d-flex align-items-center">
+                                <h6 class="mb-0 me-1">$459.10</h6>
+                                <small class="text-success fw-semibold">
+                                  <i class="bx bx-chevron-up"></i>
+                                  42.9%
+                                </small>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="incomeChart"></div>
+                          <div class="d-flex justify-content-center pt-4 gap-2">
+                            <div class="flex-shrink-0">
+                              <div id="expensesOfWeek"></div>
+                            </div>
+                            <div>
+                              <p class="mb-n1 mt-1">Expenses This Week</p>
+                              <small class="text-muted">$39 less than last week</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                <!--/ Expense Overview -->
+
+                <!-- Transactions -->
+                <!-- <div class="col-md-6 col-lg-4 order-2 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                      <h5 class="card-title m-0 me-2">Transactions</h5>
+                      <div class="dropdown">
+                        <button
+                          class="btn p-0"
+                          type="button"
+                          id="transactionID"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
+                          <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <ul class="p-0 m-0">
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/paypal.png" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">Paypal</small>
+                              <h6 class="mb-0">Send money</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">+82.6</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/wallet.png" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">Wallet</small>
+                              <h6 class="mb-0">Mac'D</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">+270.69</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/chart.png" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">Transfer</small>
+                              <h6 class="mb-0">Refund</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">+637.91</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/cc-success.png" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">Credit Card</small>
+                              <h6 class="mb-0">Ordered Food</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">-838.71</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/wallet.png" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">Wallet</small>
+                              <h6 class="mb-0">Starbucks</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">+203.33</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/cc-warning.png" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">Mastercard</small>
+                              <h6 class="mb-0">Ordered Food</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">-92.45</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div> -->
+                <!--/ Transactions -->
+                
+                
+
+              <!-- </div> -->
+            </div>
+            <div class="container-xxl flex-grow-1 container-p-y">
+            <!-- Basic Bootstrap Table -->
+            <div class="card">
+              <h5 class="card-header">CR's And Class Co ordinator's information</h5>
+              <div class="table-responsive text-nowrap">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Section</th>
+                      <th>CR</th>
+                      <th>Coordinator</th>
+                      <!-- <th>Coordinator</th> -->
+                      <th>Phone Number</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-border-bottom-0">
+                    <tr>
+                      <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>CSE - A</strong></td>
+                      <td>Bhuvaneswari</td>
+                      <td>Mrs. D. Sriveni</td>
+                      <td>9705535693</td>
+                      <!-- <td>
+                        <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            class="avatar avatar-xs pull-up"
+                            title="Lilian Fuller"
+                          >
+                            <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            class="avatar avatar-xs pull-up"
+                            title="Sophia Wilkerson"
+                          >
+                            <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            class="avatar avatar-xs pull-up"
+                            title="Christina Parker"
+                          >
+                            <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
+                          </li>
+                        </ul>
+                      </td> -->
+                      
+                      <!-- <td><span class="badge bg-label-primary me-1">Active</span></td> -->
+                      <!-- <td>
+                        <div class="dropdown">
+                          <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                            <i class="bx bx-dots-vertical-rounded"></i>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                            >
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              ><i class="bx bx-trash me-1"></i> Delete</a
+                            >
+                          </div>
+                        </div>
+                      </td> -->
+                    </tr>
+                    <tr>
+                      <td><i class="fab fa-react fa-lg text-info me-3"></i> <strong>CSE - B</strong></td>
+                      <td>CH. Sathwik</td>
+                      <td>Mrs. Archana Nagelli</td>
+                      <td>6300329365</td>
+                      <!-- <td>
+                        <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            class="avatar avatar-xs pull-up"
+                            title="Lilian Fuller"
+                          >
+                            <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            class="avatar avatar-xs pull-up"
+                            title="Sophia Wilkerson"
+                          >
+                            <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            class="avatar avatar-xs pull-up"
+                            title="Christina Parker"
+                          >
+                            <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
+                          </li>
+                        </ul>
+                      </td>
+                      <td><span class="badge bg-label-success me-1">Completed</span></td> -->
+                      <!-- <td>
+                        <div class="dropdown">
+                          <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                            <i class="bx bx-dots-vertical-rounded"></i>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              ><i class="bx bx-edit-alt me-2"></i> Edit</a
+                            >
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              ><i class="bx bx-trash me-2"></i> Delete</a
+                            >
+                          </div>
+                        </div>
+                      </td> -->
+                    </tr>
+                    <tr>
+                      <td><i class="fab fa-vuejs fa-lg text-success me-3"></i> <strong>CSE - C</strong></td>
+                      <td>Trevor Baker</td>
+                      <td>Mrs. Anoopama</td>
+                      <td>9666444100</td>
+                      <!-- <td>
+                        <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            class="avatar avatar-xs pull-up"
+                            title="Lilian Fuller"
+                          >
+                            <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            class="avatar avatar-xs pull-up"
+                            title="Sophia Wilkerson"
+                          >
+                            <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            class="avatar avatar-xs pull-up"
+                            title="Christina Parker"
+                          >
+                            <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
+                          </li>
+                        </ul>
+                      </td>
+                      <td><span class="badge bg-label-info me-1">Scheduled</span></td> -->
+                      <!-- <td>
+                        <div class="dropdown">
+                          <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                            <i class="bx bx-dots-vertical-rounded"></i>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              ><i class="bx bx-edit-alt me-2"></i> Edit</a
+                            >
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              ><i class="bx bx-trash me-2"></i> Delete</a
+                            >
+                          </div>
+                        </div>
+                      </td> -->
+                    </tr>
+                    <tr>
+                      <td>
+                        <i class="fab fa-bootstrap fa-lg text-primary me-3"></i> <strong>CSE - D</strong>
+                      </td>
+                      <td>Jerry Milton</td>
+                      <td>Mr. Srikanth</td>
+                      <td>868674150</td>
+                      <!-- <td>
+                        <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            class="avatar avatar-xs pull-up"
+                            title="Lilian Fuller"
+                          >
+                            <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            class="avatar avatar-xs pull-up"
+                            title="Sophia Wilkerson"
+                          >
+                            <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            class="avatar avatar-xs pull-up"
+                            title="Christina Parker"
+                          >
+                            <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
+                          </li>
+                        </ul>
+                      </td>
+                      <td><span class="badge bg-label-warning me-1">Pending</span></td> -->
+                      <!-- <td>
+                        <div class="dropdown">
+                          <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                            <i class="bx bx-dots-vertical-rounded"></i>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              ><i class="bx bx-edit-alt me-2"></i> Edit</a
+                            >
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              ><i class="bx bx-trash me-2"></i> Delete</a
+                            >
+                          </div>
+                        </div>
+                      </td> -->
+                    </tr>
+                    <tr>
+                      <td>
+                        <i class="fab fa-bootstrap fa-lg text-primary me-3"></i> <strong>CSE - E</strong>
+                      </td>
+                      <td>Jerry Milton</td>
+                      <td>M. YELLAMMA</td>
+                      <td>9628594334</td>
+                      <!-- <td>
+                        <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            class="avatar avatar-xs pull-up"
+                            title="Lilian Fuller"
+                          >
+                            <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            class="avatar avatar-xs pull-up"
+                            title="Sophia Wilkerson"
+                          >
+                            <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            class="avatar avatar-xs pull-up"
+                            title="Christina Parker"
+                          >
+                            <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
+                          </li>
+                        </ul>
+                      </td>
+                      <td><span class="badge bg-label-warning me-1">Pending</span></td> -->
+                      <!-- <td>
+                        <div class="dropdown">
+                          <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                            <i class="bx bx-dots-vertical-rounded"></i>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              ><i class="bx bx-edit-alt me-2"></i> Edit</a
+                            >
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              ><i class="bx bx-trash me-2"></i> Delete</a
+                            >
+                          </div>
+                        </div>
+                      </td> -->
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!--/ Basic Bootstrap Table -->
+            </div>
+            <!-- / Content -->
+
+            <div class="content-backdrop fade"></div>
+          </div>
+          <!-- Content wrapper -->
+        </div>
+        <!-- / Layout page -->
+      </div>
+
+      <!-- Overlay -->
+      <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../assets/vendor/js/bootstrap.js"></script>
+    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    
+    <script src="../assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+    
+    <!-- Main JS -->
+    <script src="../assets/js/main.js"></script>
+
+    <!-- Page JS -->
+    <script src="../assets/js/dashboards-analytics.js"></script>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
+</html>
