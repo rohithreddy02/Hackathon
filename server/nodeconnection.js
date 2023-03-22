@@ -2,8 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const { json } = require('body-parser')
 const app = express()
-const cors = require('cors')
-app.use(cors())
+
 
 // Use body-parser middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -140,6 +139,37 @@ app.get('/avggpa',(req,res)=>{
   function count() {
     const { spawn } = require('child_process');
     const py = spawn('python', ['avggpa.py']);
+    
+    return new Promise((resolve, reject) => {
+      let result = '';
+  
+      py.stdout.on('data', (data) => {
+        result += data.toString();
+      });
+  
+      py.stdout.on('end', () => {
+        resolve(result.trim());
+      });
+  
+      py.on('error', (err) => {
+        reject(err);
+      });
+    });
+  }
+  count().then((result) => {
+    res.send(result);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+
+})
+
+//Code for Backlog Count
+app.get('/backlogcount',(req,res)=>{
+  function count() {
+    const { spawn } = require('child_process');
+    const py = spawn('python', ['backlogcount.py']);
     
     return new Promise((resolve, reject) => {
       let result = '';
