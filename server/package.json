@@ -1,85 +1,116 @@
 {
-  "name": "@minimal/material-kit-react",
-  "author": "minimals.cc",
-  "licence": "MIT",
-  "version": "1.7.0",
+  "name": "sneat-bootstrap-html-admin-template-free",
+  "description": "Most Powerful & Comprehensive Free Bootstrap 5 HTML Admin Dashboard Template built for developers! 🚀",
+  "license": "MIT",
+  "version": "1.0.0",
+  "author": {
+    "name": "ThemeSelection",
+    "url": "https://themeselection.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/themeselection/sneat-html-admin-template-free/issues"
+  },
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/themeselection/sneat-html-admin-template-free.git"
+  },
+  "homepage": "https://themeselection.com/products/sneat-free-bootstrap-html-admin-template/",
+  "keywords": [
+    "bootstrap",
+    "front-end",
+    "admin",
+    "framework",
+    "admin-dashboard",
+    "webapp",
+    "bootstrap5",
+    "themeselection",
+    "freebies"
+  ],
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint --ext .js,.jsx ./src",
-    "lint:fix": "eslint --fix --ext .js,.jsx ./src",
-    "clear-all": "rm -rf build node_modules",
-    "re-start": "rm -rf build node_modules && yarn install && yarn start",
-    "re-build": "rm -rf build node_modules && yarn install && yarn build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-react"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "build": "npx gulp build",
+    "build:js": "npx gulp build:js",
+    "build:css": "npx gulp build:css",
+    "build:fonts": "npx gulp build:fonts",
+    "build:copy": "npx gulp build:copy",
+    "build:prod": "npx gulp build --env=production",
+    "build:prod:js": "npx gulp build:js --env=production",
+    "build:prod:css": "npx gulp build:css --env=production",
+    "build:prod:fonts": "npx gulp build:fonts --env=production",
+    "build:prod:copy": "npx gulp build:copy --env=production",
+    "watch": "npx gulp watch",
+    "serve": "npx gulp serve"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@faker-js/faker": "^7.6.0",
-    "@iconify/react": "^4.1.0",
-    "@mui/lab": "^5.0.0-alpha.103",
-    "@mui/material": "^5.11.10",
-    "apexcharts": "^3.37.0",
-    "body-parser": "^1.20.2",
-    "change-case": "^4.1.2",
+    "@popperjs/core": "^2.9.2",
+    "apexcharts-clevision": "^3.28.3",
+    "bootstrap": "~5.1.3",
+    "boxicons": "~2.0.9",
+    "chart": "^0.1.2",
+    "child_process": "^1.0.2",
     "cors": "^2.8.5",
-    "date-fns": "^2.29.3",
-    "history": "^5.3.0",
-    "lodash": "^4.17.21",
-    "mysql": "^2.18.1",
-    "numeral": "^2.0.6",
-    "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-apexcharts": "^1.4.0",
-    "react-dom": "^18.2.0",
-    "react-helmet-async": "^1.3.0",
-    "react-hook-form": "^7.43.1",
-    "react-router-dom": "^6.8.1",
-    "react-scripts": "^5.0.1",
-    "simplebar-react": "^3.2.1",
-    "web-vitals": "^3.1.1"
+    "express": "^4.18.2",
+    "highlight.js": "^9.18.5",
+    "jquery": "~3.5.1",
+    "masonry-layout": "~4.2.1",
+    "nodemon": "^2.0.21",
+    "perfect-scrollbar": "~1.5.1",
+    "plotly.js": "^2.18.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.0",
-    "@babel/eslint-parser": "^7.19.1",
-    "eslint": "^8.34.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-config-react-app": "^7.0.1",
-    "eslint-plugin-flowtype": "^8.0.3",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^2.8.4"
+    "@babel/core": "~7.7.7",
+    "@babel/plugin-proposal-object-rest-spread": "~7.7.7",
+    "@babel/plugin-transform-destructuring": "~7.7.4",
+    "@babel/plugin-transform-template-literals": "~7.7.4",
+    "@babel/preset-env": "~7.7.7",
+    "ansi-colors": "~4.1.1",
+    "babel-loader": "~8.0.4",
+    "browser-sync": "^2.26.7",
+    "color-support": "~1.1.3",
+    "css-loader": "~3.4.0",
+    "deepmerge": "~4.2.2",
+    "del": "~5.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "fancy-log": "~1.3.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-dart-sass": "^1.0.2",
+    "gulp-environment": "~1.5.2",
+    "gulp-exec": "^5.0.0",
+    "gulp-if": "~3.0.0",
+    "gulp-rename": "~2.0.0",
+    "gulp-replace": "~1.0.0",
+    "gulp-sourcemaps": "~2.6.4",
+    "gulp-useref": "^3.1.3",
+    "html-loader": "~0.5.5",
+    "js-beautify": "^1.10.3",
+    "prettier": "^2.2.1",
+    "sass-loader": "~8.0.0",
+    "string-replace-webpack-plugin": "~0.1.3",
+    "style-loader": "~1.1.2",
+    "uglifyjs-webpack-plugin": "^1.1.2",
+    "webpack": "~4.41.0",
+    "yarn": "^1.22.19"
   },
-  "overrides": {
-    "nth-check": "2.1.1"
+  "gulp-environment": {
+    "environments": [
+      {
+        "name": "development",
+        "aliases": [
+          "dev"
+        ]
+      },
+      {
+        "name": "production",
+        "aliases": [
+          "prod"
+        ]
+      }
+    ],
+    "default": "development"
   }
 }

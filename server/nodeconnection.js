@@ -47,7 +47,7 @@ app.post('/check',(req,res)=>{
   });
 })
 
-// Define route to handle form submission
+// Define route to handle login
 app.post('/submit', (req, res) => {
   var a=Object.values(req.body) 
   const email=a[0]
@@ -109,7 +109,7 @@ app.post('/submit', (req, res) => {
         });
       });
     }
-    count(username).then((result) => {
+    count(email).then((result) => {
       res.send(result);
     })
     .catch((err) => {
