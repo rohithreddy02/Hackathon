@@ -2,8 +2,10 @@ import pandas as pd
 import pymysql
 from sklearn.cluster import KMeans
 import sys
+import matplotlib.pyplot as plt
 
-n=int(sys.argv[1])
+# n=int(sys.argv[1])
+n = 5
 
 db_connect=pymysql.connect(host="dheemanthdb1.cspqrfmzp8xf.ap-south-1.rds.amazonaws.com",user="admin",passwd="Dheemanth12",database="dheemanthdb1")
 df=pd.read_sql('SELECT Rollno,TotalGpa,Nocert,Extra from Studentdetails',con=db_connect)
@@ -41,6 +43,15 @@ grouped_km['Type']=[chr(ord('A')+i) for i in range(n)]
 
 clustered_data['Rollno']=df2
 
-print(clustered_data)
-print(grouped_km)
+# print(clustered_data)
+# print(grouped_km)
+
+wedges, texts, autotexts = plt.pie(grouped_km['Cluster Size'], autopct='%1.1f%%', shadow=True, radius=0.8, explode=[0.1,0,0,0,0])
+
+plt.legend(wedges, ['Excellent', 'Good', 'Average', 'Below Average', 'Need to Improve'], loc='lower right', bbox_to_anchor=(1, 0, 0.25, 1), fontsize=10)
+plt.title('Clustered Performance', fontsize=20)
+
+# plt.show()
+
+plt.savefig('charts/Cluster.png')
 db_connect.close()
