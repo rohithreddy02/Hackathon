@@ -48,7 +48,7 @@ app.post('/check',(req,res)=>{
 })
 
 // Define route to handle login
-app.post('/submit', (req, res) => {
+app.post('https://superlative-pavlova-fda4b9.netlify.app/submit', (req, res) => {
   var a=Object.values(req.body) 
   const email=a[0]
   const password=a[1]
