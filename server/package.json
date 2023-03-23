@@ -28,7 +28,7 @@
     "freebies"
   ],
   "scripts": {
-    "install":"npm install --force",
+    "run":"npm install --force",
     "build": "node nodeconnection.js",
     "build:js": "npx gulp build:js",
     "build:css": "npx gulp build:css",
