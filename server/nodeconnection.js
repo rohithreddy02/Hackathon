@@ -39,7 +39,7 @@ app.post('/check',(req,res)=>{
       res.sendFile(__dirname+"/html/index.html")
     }
     else if(result=="User Exist"){
-      res.sendFile(__dirname+"/html/pages-misc-under-maintenance.html")
+      res.sendFile(__dirname+"/html/pages-misc-under-maintenance2.html")
     }
   })
   .catch((err) => {
@@ -194,7 +194,36 @@ app.get('/avggpa',(req,res)=>{
   });
 
 })
+//Code for Number of Certificates
+app.get('/nocert',(req,res)=>{
+  function count() {
+    const { spawn } = require('child_process');
+    const py = spawn('python', ['certcount.py']);
+    
+    return new Promise((resolve, reject) => {
+      let result = '';
+  
+      py.stdout.on('data', (data) => {
+        result += data.toString();
+      });
+  
+      py.stdout.on('end', () => {
+        resolve(result.trim());
+      });
+  
+      py.on('error', (err) => {
+        reject(err);
+      });
+    });
+  }
+  count().then((result) => {
+    res.send(result);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 
+})
 //Code for Backlog Count
 app.get('/backlogcount',(req,res)=>{
   function count() {
