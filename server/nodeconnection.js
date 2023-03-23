@@ -222,7 +222,6 @@ app.get('/nocert',(req,res)=>{
   .catch((err) => {
     console.error(err);
   });
-
 })
 //Code for Backlog Count
 app.get('/backlogcount',(req,res)=>{
