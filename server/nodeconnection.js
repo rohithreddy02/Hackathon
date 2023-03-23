@@ -48,7 +48,7 @@ app.post('/check',(req,res)=>{
 })
 
 // Define route to handle login
-app.post('https://superlative-pavlova-fda4b9.netlify.app/submit', (req, res) => {
+app.post('/submit', (req, res) => {
   var a=Object.values(req.body) 
   const email=a[0]
   const password=a[1]
@@ -283,80 +283,80 @@ app.get('/create_clusters',(req,res)=>{
 
 // Serve index.html as the root route
 app.get('/', (req, res) => {
-  res.sendFile(__dirname+'/html/index.html');
+  res.sendFile(__dirname+'/index.html');
 })
 //Navigation To Register Page
 app.get('/auth-register-basic.html',(req,res)=>{
-  res.sendFile(__dirname+'/html/auth-register-basic.html');
+  res.sendFile(__dirname+'/auth-register-basic.html');
 })
 // navigation to form
 app.get('/form.html', (req, res) => {
-  res.sendFile(__dirname+'/html/form.html');
+  res.sendFile(__dirname+'/form.html');
 })
 // navigation to cluster
 app.get('/cluster.html', (req, res) => {
-  res.sendFile(__dirname+'/html/cluster.html');
+  res.sendFile(__dirname+'/cluster.html');
 })
 
 // navigation to logout
 app.get('/index.html', (req, res) => {
-  res.sendFile(__dirname+'/html/index.html');
+  res.sendFile(__dirname+'/index.html');
 })
 
 // navigation to ranking
 app.get('/ranking.html', (req, res) => {
-  res.sendFile(__dirname+'/html/ranking.html');
+  res.sendFile(__dirname+'/ranking.html');
 })
 
 // navigation to blog
 app.get('/blog.html', (req, res) => {
-  res.sendFile(__dirname+'/html/blog.html');
+  res.sendFile(__dirname+'/blog.html');
 })
 
 // user navigation pages
 
 app.get('/userdashboard.html', (req, res) => {
-  res.sendFile(__dirname+'/html/userdashboard.html');
+  res.sendFile(__dirname+'/userdashboard.html');
 })
 
 // navigation to form
 app.get('/userform.html', (req, res) => {
-  res.sendFile(__dirname+'/html/userform.html');
+  res.sendFile(__dirname+'/userform.html');
 })
 
 // navigation to cluster
 app.get('/usercluster.html', (req, res) => {
-  res.sendFile(__dirname+'/html/usercluster.html');
+  res.sendFile(__dirname+'/usercluster.html');
 })
 
 // navigation to logout
 app.get('/index.html', (req, res) => {
-  res.sendFile(__dirname+'/html/index.html');
+  res.sendFile(__dirname+'/index.html');
 })
 
 // navigation to ranking
 app.get('/userranking.html', (req, res) => {
-  res.sendFile(__dirname+'/html/userranking.html');
+  res.sendFile(__dirname+'/userranking.html');
 })
 
 // navigation to blog
 app.get('/userblog.html', (req, res) => {
-  res.sendFile(__dirname+'/html/userblog.html');
+  res.sendFile(__dirname+'/userblog.html');
 })
 
 app.get('/userdashboard.html', (req, res) => {
-  res.sendFile(__dirname+'/html/userdashboard.html');
+  res.sendFile(__dirname+'/userdashboard.html');
 })
 //To apply css to the index page.
 app.use('/assets',express.static(__dirname+'/assets'))
 
 //for admin-dashboard
 app.get('/dashboard.html', (req, res) => {
-  res.sendFile(__dirname+'/html/dashboard.html');
+  res.sendFile(__dirname+'/dashboard.html');
 })
 //for java-script code:
 
-app.use('/cluster-details',express.static(__dirname+'/html/cluster-details.html'))
+app.use('/cluster-details',express.static(__dirname+'/cluster-details.html'))
 // Start the server
 
 app.listen(3000, () => {
