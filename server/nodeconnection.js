@@ -352,7 +352,7 @@ app.get('/userdashboard.html', (req, res) => {
 //To apply css to the index page.
 app.use('/assets',express.static(__dirname+'/assets'))
 
-app.get('/submit.html', (req, res) => {
+app.get('/submit', (req, res) => {
   res.sendFile(__dirname+'/dashboard.html');
 })
 app.get('/dashboard.html', (req, res) => {
