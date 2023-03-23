@@ -75,13 +75,13 @@ app.post('/submit', (req, res) => {
   }
   authenticate(email, password).then((result) => {
     if(result=='True-Admin'){
-        res.sendFile(__dirname+'/html/dashboard.html')
+        res.sendFile(__dirname+'/dashboard.html')
     }
     else if(result=='True-Student'){
-      res.sendFile(__dirname+'/html/userdashboard.html')
+      res.sendFile(__dirname+'/userdashboard.html')
     }
     else{
-      res.sendFile(__dirname+'/html/pages-misc-under-maintenance.html')
+      res.sendFile(__dirname+'/pages-misc-under-maintenance.html')
     }
   })
   .catch((err) => {
