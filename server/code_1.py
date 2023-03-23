@@ -4,8 +4,7 @@ from sklearn.cluster import KMeans
 import sys
 import matplotlib.pyplot as plt
 
-# n=int(sys.argv[1])
-n = 5
+n=int(sys.argv[1])
 
 db_connect=pymysql.connect(host="dheemanthdb1.cspqrfmzp8xf.ap-south-1.rds.amazonaws.com",user="admin",passwd="Dheemanth12",database="dheemanthdb1")
 df=pd.read_sql('SELECT Rollno,TotalGpa,Nocert,Extra from Studentdetails',con=db_connect)
@@ -43,8 +42,8 @@ grouped_km['Type']=[chr(ord('A')+i) for i in range(n)]
 
 clustered_data['Rollno']=df2
 
-# print(clustered_data)
-# print(grouped_km)
+print(clustered_data)
+print(grouped_km)
 
 wedges, texts, autotexts = plt.pie(grouped_km['Cluster Size'], autopct='%1.1f%%', shadow=True, radius=0.8, explode=[0.1,0,0,0,0])
 

@@ -130,6 +130,7 @@ app.post('/add_db',(req,res)=>{
   py.stderr.on('data', (data) => {
     console.error(`Error from Python: ${data}`);
   });
+  res.sendFile(__dirname+'/html/pages-misc-under-maintenance3.html')
   
 })
 
@@ -349,7 +350,10 @@ app.get('/userdashboard.html', (req, res) => {
 //To apply css to the index page.
 app.use('/assets',express.static(__dirname+'/assets'))
 
-
+//for admin-dashboard
+app.get('/dashboard.html', (req, res) => {
+  res.sendFile(__dirname+'/html/dashboard.html');
+})
 //for java-script code:
 
 app.use('/cluster-details',express.static(__dirname+'/html/cluster-details.html'))

@@ -53,7 +53,7 @@ fetch('http://localhost:3000/usercount')
   });
 
 
-  fetch('http://localhost:3000/userdetails')
+fetch('http://localhost:3000/userdetails')
   .then(response => response.text())
   .then(data => {
     const r =data.split(/\s+/)
@@ -69,7 +69,7 @@ fetch('http://localhost:3000/usercount')
     let S12B=r[9]
     let S21B=r[10]
     let S22B=r[11]
-
+    console.log(r);
     document.getElementById('cgpa').innerText=TotalGpa;
     document.getElementById('totalbacklogs').innerText=TotalBacklogs;
     document.getElementById('nocert').innerText=Nocert;

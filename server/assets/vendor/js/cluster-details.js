@@ -5,6 +5,7 @@ fetch('http://localhost:3000/create_clusters')
     const jsonData = JSON.parse(data);
     const table = document.createElement("table");
     table.setAttribute("class", "table")
+    console.log(jsonData);
     // Create table headers
     const headers = table.createTHead();
     const headerRow = headers.insertRow(0);

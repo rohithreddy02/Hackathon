@@ -25,8 +25,15 @@ extra=str(sys.argv[15])
 
 #ADDING THE VALUES INTO Studentdetails
 try:
-    command='insert into Studentdetails values("'+rollno+'","'+name+'","'+email+'","'+s11_g+'","'+s11_b+'","'+s12_g+'","'+s12_b+'","'+s21_g+'","'+s21_b+'","'+s22_g+'","'+s22_b+'","'+totalBacklogs+'","'+totalGpa+'","'+noCert+'","'+extra+'");'
+    command='select count(*) from Studentdetails where Rollno="'+rollno+'";'
     cursr.execute(command)
+    count=cursr.fetchone()[0]
+    if count==0:
+        command='insert into Studentdetails values("'+rollno+'","'+name+'","'+email+'","'+s11_g+'","'+s11_b+'","'+s12_g+'","'+s12_b+'","'+s21_g+'","'+s21_b+'","'+s22_g+'","'+s22_b+'","'+totalBacklogs+'","'+totalGpa+'","'+noCert+'","'+extra+'");'
+        cursr.execute(command)
+    else:
+        command='update Studentdetails set Rollno='+rollno+',Name='+name+',email='+email+',S11G='+s11_g+',S12G='+s12_g+',S21G='+s21_g+',S22G='+s22_g+',S11B='+s11_b+',S12B='+s12_b+',S21B='+s21_b+',S22B='+s22_b+',TotalBacklogs='+totalBacklogs+',TotalGpa='+totalGpa+',Nocert='+noCert+',Extra='+extra+' where Rollno='+rollno+';'
+        cursr.execute(command)
     db_connect.commit()
 except:
     db_connect.rollback()
@@ -44,7 +51,7 @@ msg['From'] = 'hackathon73@gmail.com'
 msg['To'] = rollno+'@sreenidhi.edu.in'
 
 # Set the message content
-msg.set_payload('Hi '+name+' we have received your details successfully\n\nThank you for using our website\nRegards SSPS Admin')
+msg.set_payload('Hi '+name+' we have received your details successfully\n\nThank you for using our website\nRegards SSPS Admin\nDo not Reply System Generated Email')
 
 # Send the message
 smtp_obj = smtplib.SMTP('smtp.gmail.com', 587)
@@ -53,20 +60,14 @@ smtp_obj.login('hackathon73@gmail.com', 'xrzdcgfyysxihzpd')
 smtp_obj.sendmail(msg['From'], [msg['To']], msg.as_string())
 smtp_obj.quit()
 
-# Create a message object
-msg = email.message.Message()
+msg2=email.message.Message()
+msg2['Subject']='SSPS Admin'
+msg2['From']='hackathon73@gmail.com'
+msg2['To']='snist.ssps@gmail.com'
+msg2.set_payload('Hi '+name+' of RollNumber:'+rollno+' has uploaded details successfully verify the details ')
 
-# Set the message headers
-msg['Subject'] = 'SSPS Admin'
-msg['From'] = 'hackathon73@gmail.com'
-msg['To'] = 'snist.ssps@sreenidhi.edu.in'
-
-# Set the message content
-msg.set_payload('Hi '+rollno+'entered details verify them\n')
-
-# Send the message
-smtp_obj = smtplib.SMTP('smtp.gmail.com', 587)
-smtp_obj.starttls()
-smtp_obj.login('hackathon73@gmail.com', 'xrzdcgfyysxihzpd')
-smtp_obj.sendmail(msg['From'], [msg['To']], msg.as_string())
-smtp_obj.quit()
+smtp2=smtplib.SMTP('smtp.gmail.com',587)
+smtp2.starttls()
+smtp2.login('hackathon73@gmail.com', 'xrzdcgfyysxihzpd')
+smtp2.sendmail(msg2['From'], [msg2['To']], msg2.as_string())
+smtp2.quit()
