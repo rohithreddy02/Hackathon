@@ -48,7 +48,7 @@ app.post('/check',(req,res)=>{
 })
 
 // Define route to handle login
-app.post('/submit', (req, res) => {
+app.post('/submit.html', (req, res) => {
   res.send("HEllo");
   // var a=Object.values(req.body) 
   // const email=a[0]
@@ -352,7 +352,9 @@ app.get('/userdashboard.html', (req, res) => {
 //To apply css to the index page.
 app.use('/assets',express.static(__dirname+'/assets'))
 
-//for admin-dashboard
+app.get('/submit.html', (req, res) => {
+  res.sendFile(__dirname+'/dashboard.html');
+})
 app.get('/dashboard.html', (req, res) => {
   res.sendFile(__dirname+'/dashboard.html');
 })
