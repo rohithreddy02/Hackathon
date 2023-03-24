@@ -3,6 +3,7 @@ fetch('http://localhost:3000/create_clusters')
   .then(response => response.text())
   .then(data => {
     const jsonData = JSON.parse(data);
+    delete(jsonData[0])
     const table = document.createElement("table");
     table.setAttribute("class", "table")
     console.log(jsonData);

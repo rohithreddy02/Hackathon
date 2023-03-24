@@ -267,7 +267,7 @@ app.get('/create_clusters',(req,res)=>{
     const headers = rows[0].split(/\s+/); // Split headers by whitespace
 
     const data = [];
-    for (let i = 1; i < rows.length-5; i++) {
+    for (let i = 1; i < rows.length; i++) {
       const columns = rows[i].split(/\s+/); // Split columns by whitespace
       const row = {};
       for (let j = 0; j < columns.length; j++) {
@@ -281,7 +281,6 @@ app.get('/create_clusters',(req,res)=>{
     console.error(err);
   });
 })
-
 
 //code for ranking
 
