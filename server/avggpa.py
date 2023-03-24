@@ -1,5 +1,6 @@
 import pymysql
 import sys
+import math
 
 #connect database
 db_connect=pymysql.connect(host="dheemanthdb1.cspqrfmzp8xf.ap-south-1.rds.amazonaws.com",user="admin",passwd="Dheemanth12",database="dheemanthdb1")
@@ -18,6 +19,7 @@ try:
     cursr.execute(command)
     avg22=cursr.fetchone()[0]
     res=[avg11,avg12,avg21,avg22]
+    
     print(avg11,avg12,avg21,avg22)
     sys.stdout.flush()
 except:
