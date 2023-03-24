@@ -45,12 +45,22 @@ clustered_data['Rollno']=df2
 print(clustered_data)
 print(grouped_km)
 
-wedges, texts, autotexts = plt.pie(grouped_km['Cluster Size'], autopct='%1.1f%%', shadow=True, radius=0.8, explode=[0.1,0,0,0,0])
+legend_labels = []
+explode = [0.1]
 
-plt.legend(wedges, ['A ', 'B', 'C', 'D', 'E'], loc='lower right', bbox_to_anchor=(1, 0, 0.25, 1), fontsize=10)
+for i in range(25):
+    explode.append(0)
+
+for i in range(26):
+    legend_labels.append(chr(65+i))
+# print(legend_labels)
+
+wedges, texts, autotexts = plt.pie(grouped_km['Cluster Size'], autopct='%1.1f%%', shadow=True, radius=0.8, explode=explode[:size])
+
+plt.legend(wedges, legend_labels[:size], loc='lower right', bbox_to_anchor=(1, 0, 0.25, 1), fontsize=10)
 plt.title('Clustered Performance', fontsize=20)
 
 # plt.show()
 
-plt.savefig('../assets/img/Charts/Cluster.png')
+plt.savefig('./assets/img/Charts/Cluster.png')
 db.close()
