@@ -36,10 +36,10 @@ app.post('/check',(req,res)=>{
   }
   authen(username,email,password).then((result) => {
     if(result=="Account Created"){
-      res.sendFile(__dirname+"/html/index.html")
+      res.sendFile(__dirname+"/index.html")
     }
     else if(result=="User Exist"){
-      res.sendFile(__dirname+"/html/pages-misc-under-maintenance2.html")
+      res.sendFile(__dirname+"/pages-misc-under-maintenance2.html")
     }
   })
   .catch((err) => {
@@ -131,7 +131,7 @@ app.post('/add_db',(req,res)=>{
   py.stderr.on('data', (data) => {
     console.error(`Error from Python: ${data}`);
   });
-  res.sendFile(__dirname+'/html/pages-misc-under-maintenance3.html')
+  res.sendFile(__dirname+'/pages-misc-under-maintenance3.html')
   
 })
 
