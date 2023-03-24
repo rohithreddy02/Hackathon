@@ -36,10 +36,10 @@ app.post('/check',(req,res)=>{
   }
   authen(username,email,password).then((result) => {
     if(result=="Account Created"){
-      res.sendFile(__dirname+"/html/index.html")
+      res.sendFile(__dirname+"/index.html")
     }
     else if(result=="User Exist"){
-      res.sendFile(__dirname+"/html/pages-misc-under-maintenance2.html")
+      res.sendFile(__dirname+"/pages-misc-under-maintenance2.html")
     }
   })
   .catch((err) => {
@@ -131,7 +131,7 @@ app.post('/add_db',(req,res)=>{
   py.stderr.on('data', (data) => {
     console.error(`Error from Python: ${data}`);
   });
-  res.sendFile(__dirname+'/html/pages-misc-under-maintenance3.html')
+  res.sendFile(__dirname+'/pages-misc-under-maintenance3.html')
   
 })
 
@@ -281,6 +281,61 @@ app.get('/create_clusters',(req,res)=>{
     console.error(err);
   });
 })
+
+
+//code for ranking
+
+app.get('/ranking',(req,res)=>{
+  function get_ranking(){
+    const { spawn }=require('child_process');
+    const py=spawn('python',['ranking.py'] );
+    return new Promise((resolve, reject) => {
+        let result = '';
+    
+        py.stdout.on('data', (data) => {
+          result += data.toString();
+        });
+    
+        py.stdout.on('end', () => {
+          resolve(result.trim());
+        });
+    
+        py.on('error', (err) => {
+          reject(err);
+        });
+      });
+  }
+  get_ranking()
+  .then((result) => {
+
+    const data = result;
+    const regex = /(\d+)\s+([^\s]+)\s+([\d\.-]+)\s+([\w\s]+)\s+([\d\.]+)\s+(\d+)\s+(\d+)/gm;
+
+  let match;
+  let results = [];
+  while ((match = regex.exec(data)) !== null) {
+    const result = {
+      Rank: parseInt(match[1])+1,
+      Total: match[3],
+      Name: match[4],
+      TotalGpa: match[5],
+      Nocert: match[6],
+      Extra: match[7]
+    };
+
+    results.push(result);
+  }
+
+  const json = JSON.stringify(results);
+  res.send(json)
+    
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+})
+
+
 
 // Serve index.html as the root route
 app.get('/', (req, res) => {
