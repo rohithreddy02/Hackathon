@@ -30,4 +30,4 @@ plt.xlabel('Cummulative GPA of Students ---->', fontsize=15)
 plt.ylabel('No of Students ---->', fontsize=15)
 
 # plt.show()
-plt.savefig('../assets/img/Charts/histogram.png')
+plt.savefig('./assets/img/Charts/histogram.png')

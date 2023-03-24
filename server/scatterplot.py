@@ -23,4 +23,4 @@ cbar.set_label('Student Extracurricular Activities ---->', fontsize=12)
 
 # plt.show()
 
-plt.savefig('../assets/img/Charts/scatter_plot.png')
+plt.savefig('./assets/img/Charts/scatter_plot.png')
