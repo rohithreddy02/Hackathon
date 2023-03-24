@@ -345,6 +345,11 @@ app.get('/userblog.html', (req, res) => {
   res.sendFile(__dirname+'/userblog.html');
 })
 
+//navigation to y=userfaq
+app.get('/userfaq.html', (req, res) => {
+  res.sendFile(__dirname+'/userfaq.html');
+})
+
 app.get('/userdashboard.html', (req, res) => {
   res.sendFile(__dirname+'/userdashboard.html');
 })
