@@ -22,3 +22,4 @@ df_result = pd.merge(df_sorted[['Rollno','Total']],df, on='Rollno')
 
 # print the results
 print(df_result)
+db_connect.close()
