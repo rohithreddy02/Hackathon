@@ -48,78 +48,78 @@ app.post('/check',(req,res)=>{
 })
 
 // Define route to handle login
-// app.post('/submit', (req, res) => {
-//   res.send("HEllo");
-//   // var a=Object.values(req.body) 
-//   // const email=a[0]
-//   // const password=a[1]
-//   // //Authentication of Login details
-//   // function authenticate(username, password) {
-//   //   const { spawn } = require('child_process');
-//   //   const py = spawn('python', ['logincheck.py', username, password]);
+app.post('/submit', (req, res) => {
+  
+  var a=Object.values(req.body) 
+  const email=a[0]
+  const password=a[1]
+  //Authentication of Login details
+  function authenticate(username, password) {
+    const { spawn } = require('child_process');
+    const py = spawn('python', ['logincheck.py', username, password]);
     
-//   //   return new Promise((resolve, reject) => {
-//   //     let result = '';
+    return new Promise((resolve, reject) => {
+      let result = '';
   
-//   //     py.stdout.on('data', (data) => {
-//   //       result += data.toString();
-//   //     });
+      py.stdout.on('data', (data) => {
+        result += data.toString();
+      });
   
-//   //     py.stdout.on('end', () => {
-//   //       resolve(result.trim());
-//   //     });
+      py.stdout.on('end', () => {
+        resolve(result.trim());
+      });
   
-//   //     py.on('error', (err) => {
-//   //       reject(err);
-//   //     });
-//   //   });
-//   // }
-//   // authenticate(email, password).then((result) => {
-//   //   console.log(__dirname)
-//   //   if(result=='True-Admin'){
-//   //       res.sendFile(__dirname+'/dashboard.html')
-//   //   }
-//   //   else if(result=='True-Student'){
-//   //     res.sendFile(__dirname+'/userdashboard.html')
-//   //   }
-//   //   else{
-//   //     res.sendFile(__dirname+'/pages-misc-under-maintenance.html')
-//   //   }
-//   // })
-//   // .catch((err) => {
-//   //   console.error(err);
-//   // });
+      py.on('error', (err) => {
+        reject(err);
+      });
+    });
+  }
+  authenticate(email, password).then((result) => {
+    console.log(__dirname)
+    if(result=='True-Admin'){
+        res.sendFile(__dirname+'/dashboard.html')
+    }
+    else if(result=='True-Student'){
+      res.sendFile(__dirname+'/userdashboard.html')
+    }
+    else{
+      res.sendFile(__dirname+'/pages-misc-under-maintenance.html')
+    }
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 
-//   // app.get('/userdetails',(req,res)=>{
-//   //   function count(username) {
-//   //     const { spawn } = require('child_process');
-//   //     const py = spawn('python', ['userdetails.py',username]);
+  app.get('/userdetails',(req,res)=>{
+    function count(username) {
+      const { spawn } = require('child_process');
+      const py = spawn('python', ['userdetails.py',username]);
       
-//   //     return new Promise((resolve, reject) => {
-//   //       let result = '';
+      return new Promise((resolve, reject) => {
+        let result = '';
     
-//   //       py.stdout.on('data', (data) => {
-//   //         result += data.toString();
-//   //       });
+        py.stdout.on('data', (data) => {
+          result += data.toString();
+        });
     
-//   //       py.stdout.on('end', () => {
-//   //         resolve(result.trim());
-//   //       });
+        py.stdout.on('end', () => {
+          resolve(result.trim());
+        });
     
-//   //       py.on('error', (err) => {
-//   //         reject(err);
-//   //       });
-//   //     });
-//   //   }
-//   //   count(email).then((result) => {
-//   //     res.send(result);
-//   //   })
-//   //   .catch((err) => {
-//   //     console.error(err);
-//   //   });
+        py.on('error', (err) => {
+          reject(err);
+        });
+      });
+    }
+    count(email).then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
   
-//   // })
-// })
+  })
+})
 
 // Code for add-details.
 app.post('/add_db',(req,res)=>{

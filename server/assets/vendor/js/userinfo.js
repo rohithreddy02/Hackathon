@@ -15,6 +15,7 @@ fetch('http://localhost:3000/userdetails')
     let S12B=r[9]
     let S21B=r[10]
     let S22B=r[11]
+    let Name=r[12]
     document.getElementById('cgpa').innerText=TotalGpa;
     document.getElementById('totalbacklogs').innerText=TotalBacklogs;
     document.getElementById('nocert').innerText=Nocert;
@@ -26,6 +27,7 @@ fetch('http://localhost:3000/userdetails')
     document.getElementById('ub2').innerText=S12B;
     document.getElementById('ub3').innerText=S21B;
     document.getElementById('ub4').innerText=S22B;
+    document.getElementById('name').innerText='Hi '+Name+'\nThankyou for using our website'
     if(pos==0){
       document.getElementById('position').innerText="No Postion";
     }
