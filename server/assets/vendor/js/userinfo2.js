@@ -7,15 +7,6 @@ fetch('http://localhost:3000/userdetails')
     let TotalBacklogs=r[1]
     let Nocert=r[2] 
     let pos=r[3] 
-    let S11G=r[4]
-    let S12G=r[5]
-    let S21G=r[6]
-    let S22G=r[7]
-    let S11B=r[8]
-    let S12B=r[9]
-    let S21B=r[10]
-    let S22B=r[11]
-    let Name=r[12]
     document.getElementById('cgpa2').innerText=TotalGpa;
     document.getElementById('totalbacklogs2').innerText=TotalBacklogs;
     document.getElementById('nocert2').innerText=Nocert;
