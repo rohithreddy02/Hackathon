@@ -26,4 +26,4 @@ plt.legend(wedges, ['Backlogs', 'Cocurricular', 'Extracurricular'], loc='lower r
 plt.title('Pie Chart Representing The Overall Performance', fontsize=18)
 # plt.show()
 
-plt.savefig('Charts/piechart.png')
+plt.savefig('../assets/img/Charts/piechart.png')
