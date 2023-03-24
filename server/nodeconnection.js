@@ -282,6 +282,61 @@ app.get('/create_clusters',(req,res)=>{
   });
 })
 
+
+//code for ranking
+
+app.get('/ranking',(req,res)=>{
+  function get_ranking(){
+    const { spawn }=require('child_process');
+    const py=spawn('python',['ranking.py'] );
+    return new Promise((resolve, reject) => {
+        let result = '';
+    
+        py.stdout.on('data', (data) => {
+          result += data.toString();
+        });
+    
+        py.stdout.on('end', () => {
+          resolve(result.trim());
+        });
+    
+        py.on('error', (err) => {
+          reject(err);
+        });
+      });
+  }
+  get_ranking()
+  .then((result) => {
+
+    const data = result;
+    const regex = /(\d+)\s+([^\s]+)\s+([\d\.-]+)\s+([\w\s]+)\s+([\d\.]+)\s+(\d+)\s+(\d+)/gm;
+
+  let match;
+  let results = [];
+  while ((match = regex.exec(data)) !== null) {
+    const result = {
+      Rank: parseInt(match[1])+1,
+      Total: match[3],
+      Name: match[4],
+      TotalGpa: match[5],
+      Nocert: match[6],
+      Extra: match[7]
+    };
+
+    results.push(result);
+  }
+
+  const json = JSON.stringify(results);
+  res.send(json)
+    
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+})
+
+
+
 // Serve index.html as the root route
 app.get('/', (req, res) => {
   res.sendFile(__dirname+'/index.html');
