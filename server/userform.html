@@ -141,7 +141,7 @@
             <li class="menu-item">
               <a href="userblog.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Basic">Blog</div>
+                <div data-i18n="Basic">Recommendations</div>
               </a>
             </li>
             <li class="menu-item">
@@ -168,7 +168,6 @@
                 <div data-i18n="Basic">Log Out</div>
               </a>
             </li>
-
             <!-- Components -->
           </ul>
         </aside>
@@ -191,7 +190,7 @@
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
               <!-- Search -->
               <div class="navbar-nav align-items-center">
-                <h1 class="bg-label" style="margin-top: 15px;margin-left: 60px;">SSPS USER</h1>
+                <h1 class="bg-label" style="margin-top: 15px;margin-left: 60px;">SSPS ADMIN</h1>
               </div>
             </div>
           </nav>
@@ -214,14 +213,14 @@
                       <small class="text-muted float-end">for Student</small>
                     </div>
                     <div class="card-body">
-                      <form>
+                      <form method="post" action="/add_db">
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-fullname">Full Name</label>
-                          <input type="text" class="form-control" id="basic-default-fullname" placeholder="Student's Name" />
+                          <input type="text" class="form-control" id="basic-default-fullname" placeholder="Student's Name" name="Sname"/>
                         </div>
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-company">Roll-no</label>
-                          <input type="text" class="form-control" id="basic-default-company" placeholder="Student's Roll no" />
+                          <input type="text" class="form-control" id="basic-default-company" placeholder="Student's Roll no" name="Sno" />
                         </div>
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-email">Email</label>
@@ -233,64 +232,76 @@
                               placeholder="Student@email.com"
                               aria-label="john.doe"
                               aria-describedby="basic-default-email2"
+                              name="Semail"
                             />
                             <span class="input-group-text" id="basic-default-email2"></span>
                           </div>
                           <div class="form-text">It is recommended to enter college email</div>
                         </div>
+                
                         <div class="mb-3">
-                          <label class="form-label" for="basic-default-phone">Phone No</label>
-                          <input
-                            type="text"
-                            id="basic-default-phone"
-                            class="form-control phone-mask"
-                            placeholder="658 799 8941"
-                          />
+                          <label class="form-label" for="basic-default-fullname">Academic-Details</label>
+                        
+                          <div class="input-group" style="margin-left: 7px;" >
+                            <span class="input-group-text">Semester- I - I</span>
+                            <input type="text" aria-label="First name" class="form-control" placeholder="Enter gpa" name="s11_g">
+                            <input type="text" aria-label="Last name" class="form-control" placeholder="Enter no of backlogs" name="s11_b">
+                          </div>
+                          <div class="input-group" style="margin-top: 7px;margin-left: 7px">
+                            <span class="input-group-text">Semester-I- II </span>
+                            <input type="text" aria-label="First name" class="form-control" placeholder="Enter gpa" name="s12_g">
+                            <input type="text" aria-label="Last name" class="form-control" placeholder="Enter no of backlogs" name="s12_b">
+                          </div>
+                          <div class="input-group" style="margin-top: 7px;margin-left: 7px">
+                            <span class="input-group-text">Semester-II- I </span>
+                            <input type="text" aria-label="First name" class="form-control" placeholder="Enter gpa" name="s21_g">
+                            <input type="text" aria-label="Last name" class="form-control" placeholder="Enter no of backlogs" name="s21_b">
+                          </div>
+                          <div class="input-group" style="margin-top: 7px;margin-left: 7px">
+                            <span class="input-group-text">Semester-II-II</span>
+                            <input type="text" aria-label="First name" class="form-control" placeholder="Enter gpa" name="s22_g">
+                            <input type="text" aria-label="Last name" class="form-control" placeholder="Enter no of backlogs" name="s22_b">
+                          </div>
+                          <div class="mb-3" style="width:max-content;text-align: left; width:100%; margin-left: 7px;margin-top: 5px; display:inline-block;">
+                            <label for="no-of-backlogs" class="col-md-2 col-form-label" style="font-weight: lighter; width: auto;">Enter Total Number of Backlogs</label>
+                            <div class="col-md-10" style="width:60%;margin-top: 5px;">
+                              <input class="form-control" type="number" value="0" id="no-of-backlogs" max="20" min="0" name="SBack">
+                            </div>
+                            <label for="cgpa" class="col-md-2 col-form-label" style="margin-left:5px;margin-top: 7px; font-weight: lighter;">Enter Total Cgpa</label>
+                            <div class="col-md-10"  style="width:60%;margin-top: 5px;margin-left: 0;">
+                              <input id="defaultInput" class="form-control" type="text" placeholder="cgpa" id="cgpa" name="Scgpa">
+                            </div>
+                          </div>
                         </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-message">Message</label>
-                          <textarea
-                            id="basic-default-message"
-                            class="form-control"
-                            placeholder="Hi, Do you have a moment to talk Joe?"
-                          ></textarea>
+
+                        <label class="form-label" for="basic-default-fullname">Co-circular-Details</label>
+                        <div class="mb-3" >
+                          <label for="no-of-cert" class="col-md-2 col-form-label" style="font-weight: lighter; width: auto;margin-left: 7px;">Enter Number of Certificates</label>
+                          <div class="col-md-10" style="width:60%;margin-top: 0px;margin-left: 7px; ">
+                            <input class="form-control" type="number" value="0" id="no-of-cert" max="20" min="0" name="Scert">
+                          </div>
+                          <label for="upload" class="col-md-2 col-form-label" style="font-weight: lighter;margin-left: 7px;">Upload Certificates</label>
+                          <div>
+                            <div class="input-group" style="width: auto;" >
+                              <input type="file" class="form-control" id="upload" style="margin-left: 7px;" name="Supload">
+                              <label class="input-group-text" for="upload">Upload</label>
+                            </div>
+                          </div>
                         </div>
-                        <div class="mb-3">
-                          <label for="exampleFormControlSelect1" class="form-label">Extra circular Activities</label>
-                          <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
+
+                        <div class="mb-3" style="margin-top: 50px;">
+                          <label for="exampleFormControlSelect1" class="form-label">Extra circular-Details</label>
+                          <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example" name="SExtra">
                             <option selected="">Select Position in a club /Sports Team</option>
                             <option value="1">Volunteer</option>
                             <option value="2">Board Member</option>
                             <option value="3">Chairperson</option>
                           </select>
                         </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-fullname">C.GPA</label>
-                          <input type="text" class="form-control" id="cgpa" placeholder="Cgpa until currnt Semester" />
-                        </div>
-                      </div>
-                        <div class="mb-3" style="width:max-content;text-align: left; width:100%; margin-left: 30px; display: flex;justify-content:left;">
-                          <label for="html5-number-input" class="col-md-2 col-form-label">Enter Number of Backlogs</label>
-                          <div class="col-md-10" style="width:30%;margin:10px 30px 0 0 ;">
-                            <input class="form-control" type="number" value="0" id="html5-number-input" max="20" min="0">
-                          </div>
-                          <label for="html5-number-input" class="col-md-2 col-form-label">Enter Number of Certificates</label>
-                          <div class="col-md-10" style="width:30%;margin:10px 30px 0 0; ">
-                            <input class="form-control" type="number" value="0" id="html5-number-input" max="20" min="0">
-                          </div>
-                        </div>
-                        <div class="mb-3">
-                          <div>
-                            <h5 class="form-label" style="margin-left:30px;">Upload Certcificates</h5>
-                            <div class="input-group" style="max-width: 95%; margin: 30px;" >
-                              <input type="file" class="form-control" id="inputGroupFile02">
-                              <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                            </div>
-                          </div>
-                        </div>
-                        <br>
-                        <br>
-                        <button type="submit" class="btn btn-primary" style="margin-left: 38%;margin-top: 20px;margin-right: 38%;margin-bottom: 100px;">Add Details</button>
+
+
+
+                        <button type="submit" class="btn btn-primary" style="margin-left: 38%;margin-top: 20px;">Add Details</button>
                       </form>
                     </div>
                   </div>

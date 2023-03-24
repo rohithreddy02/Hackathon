@@ -4,11 +4,11 @@ from connection import create_connection
 
 db = create_connection()
 colors = ['red', 'green', 'blue', 'orange', 'yellow', 'violet']
-df = pd.read_sql('select * from studentperformance', con=db)
+df = pd.read_sql('select * from Studentdetails', con=db)
 
-x = list(df['backlogs'])
-y = list(df['cocurricular'])
-z = list(df['extracurricular'])
+x = list(df['TotalBacklogs'])
+y = list(df['Nocert'])
+z = list(df['Extra'])
 
 cx = cy = cz = 0
 for i in range(len(x)):

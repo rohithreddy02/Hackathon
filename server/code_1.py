@@ -3,11 +3,12 @@ import pymysql
 from sklearn.cluster import KMeans
 import sys
 import matplotlib.pyplot as plt
+from connection import create_connection
 
 n=int(sys.argv[1])
 
-db_connect=pymysql.connect(host="dheemanthdb1.cspqrfmzp8xf.ap-south-1.rds.amazonaws.com",user="admin",passwd="Dheemanth12",database="dheemanthdb1")
-df=pd.read_sql('SELECT Rollno,TotalGpa,Nocert,Extra from Studentdetails',con=db_connect)
+db = create_connection()
+df=pd.read_sql('SELECT Rollno,TotalGpa,Nocert,Extra from Studentdetails',con=db)
 
 #mycursor = db_connect.cursor()
 #mycursor.execute("INSERT ")
@@ -53,4 +54,4 @@ plt.title('Clustered Performance', fontsize=20)
 # plt.show()
 
 plt.savefig('charts/Cluster.png')
-db_connect.close()
+db.close()
