@@ -75,7 +75,6 @@ app.post('/submit', (req, res) => {
     });
   }
   authenticate(email, password).then((result) => {
-    console.log(__dirname)
     if(result=='True-Admin'){
         res.sendFile(__dirname+'/dashboard.html')
     }
