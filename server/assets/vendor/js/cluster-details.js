@@ -10,7 +10,7 @@ fetch('http://localhost:3000/create_clusters')
     // Create table headers
     const headers = table.createTHead();
     const headerRow = headers.insertRow(0);
-    Object.keys(jsonData[0]).forEach(key => {
+    Object.keys(jsonData[1]).forEach(key => {
       const th = document.createElement("th");
       th.innerText = key;
       headerRow.appendChild(th);

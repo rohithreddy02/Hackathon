@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const { json } = require('body-parser')
+const { default: cluster } = require('cluster')
 const app = express()
 
 
@@ -133,7 +134,36 @@ app.post('/add_db',(req,res)=>{
   res.sendFile(__dirname+'/pages-misc-under-maintenance3.html')
   
 })
+//Code for Cluster-page
 
+app.post('/clusters',(req,res)=>{
+  n=req.body.clusterInput
+  app.get('/create_clusters',(req,res)=>{
+    const cluster=require('./cluster_code')
+    cluster(n)
+    .then((result) => {
+      const dataString = result;
+      const rows = dataString.split('\n');
+      const headers = rows[0].split(/\s+/); // Split headers by whitespace
+  
+      const data = [];
+      for (let i = 1; i < rows.length; i++) {
+        const columns = rows[i].split(/\s+/); // Split columns by whitespace
+        const row = {};
+        for (let j = 0; j < columns.length; j++) {
+          row[headers[j]] = columns[j+1];
+        }
+        data.push(row);
+        }
+      res.json(data);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+  })
+  res.sendFile(__dirname+'/cluster.html')
+  
+})
 //Code for Usercount
 app.get('/usercount',(req,res)=>{
   function count() {
@@ -253,32 +283,6 @@ app.get('/backlogcount',(req,res)=>{
     console.error(err);
   });
 
-})
-// Code for Clustering
-
-app.get('/create_clusters',(req,res)=>{
-  const cluster=require('./cluster_code')
-  n=req.body.clusterInput
-  cluster(3)
-  .then((result) => {
-    const dataString = result;
-    const rows = dataString.split('\n');
-    const headers = rows[0].split(/\s+/); // Split headers by whitespace
-
-    const data = [];
-    for (let i = 1; i < rows.length; i++) {
-      const columns = rows[i].split(/\s+/); // Split columns by whitespace
-      const row = {};
-      for (let j = 0; j < columns.length; j++) {
-        row[headers[j]] = columns[j+1];
-      }
-      data.push(row);
-      }
-    res.json(data);
-  })
-  .catch((err) => {
-    console.error(err);
-  });
 })
 
 //code for ranking

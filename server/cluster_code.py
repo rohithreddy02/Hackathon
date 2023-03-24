@@ -40,7 +40,32 @@ grouped_km=grouped_km.reindex(columns=['Grade', 'Cluster-Size', 'TotalGpa','Noce
 grouped_km=grouped_km.sort_values(by=['Total'],ascending=False)
 grouped_km['Grade']=[chr(ord('A')+i) for i in range(n)]
 print(grouped_km)
+print()
 sys.stdout.flush()
+
+grouped_data = clustered_data.groupby(["Cluster"])
+# del(grouped_data['Total'])
+# del(grouped_data['TotalGpa'])
+# del(grouped_data['Nocert'])
+# del(grouped_data['Extra'])
+
+# cluster_dfs = {}
+# for cluster_label, group in grouped_data:
+#     # Get the Rollno values of students in this cluster
+#     rollnos = df2[group.index]
+#     # Add the Rollno column to the group DataFrame
+#     group = pd.concat([rollnos, group], axis=1)
+#     # Add the DataFrame to the dictionary
+#     cluster_dfs[cluster_label] = group
+
+# for i in range(n):
+#     cluster_df = cluster_dfs[i]
+#     cluster_df = cluster_df.loc[:, ['Cluster', 'Rollno']]
+#     print(cluster_df)
+#     print()
+#     sys.stdout.flush()
+
+
 
 db.close()
 

@@ -17,8 +17,8 @@ try:
     command='select avg(S22G) from Studentdetails;'
     cursr.execute(command)
     avg22=cursr.fetchone()[0]
-    res=[avg11,avg12,avg21,avg22]
-    print(avg11,avg12,avg21,avg22)
+    avg11=round(avg11,2)
+    print(avg11,round(avg12,2),round(avg21,2),round(avg22,2))
     sys.stdout.flush()
 except:
     db_connect.rollback()
