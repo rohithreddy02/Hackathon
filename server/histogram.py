@@ -15,12 +15,13 @@ plt.xlim(5.75,10)
 plt.grid(axis='both')
 
 mu, std = norm.fit(df['TotalGpa'])
+print(std)
 xmin, xmax = plt.xlim()
 x = np.arange(xmin, xmax, 0.1)
 
 p = norm.pdf(x, mu, std)
   
-plt.plot(x, 10*p, '--', linewidth=1)
+plt.plot(x, 25*p, '--', linewidth=1)
 
 for i in range(len(patches)):
     plt.text(x=(bins[i]+bins[i+1])/2, y=n[i]+0.1, s=int(n[i]), ha='center')
