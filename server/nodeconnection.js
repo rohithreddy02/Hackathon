@@ -91,12 +91,12 @@ app.post('/submit', (req, res) => {
   });
 
   const { spawn } = require('child_process')
-  const hist = spawn('python', ['histogram.py'])
+  const hist = spawn('python3', ['histogram.py'])
   hist.on('error', (err) => {
     reject(err);
   });
 
-  const scatter = spawn('python', ['scatterplot.py'])
+  const scatter = spawn('python3', ['scatterplot.py'])
   scatter.on('error', (err) => {
     reject(err);
   });
