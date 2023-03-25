@@ -92,6 +92,8 @@ app.post('/submit', (req, res) => {
 
   const { spawn } = require('child_process')
   const hist = spawn('python', ['histogram.py'])
+
+  const scatter = spawn('python', ['scatterplot.py'])
   
   app.get('/userdetails',(req,res)=>{
     function count(username) {
