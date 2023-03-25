@@ -1,4 +1,4 @@
-fetch('http://localhost:3000/usercount')
+fetch('http://15.206.72.43:3000/usercount')
   .then(response => response.text())
   .then(data => {
     const result =data.split(/\s+/)
@@ -9,7 +9,7 @@ fetch('http://localhost:3000/usercount')
   });
 
 
-  fetch('http://localhost:3000/avggpa')
+  fetch('http://15.206.72.43:3000/avggpa')
   .then(response => response.text())
   .then(data => {
     const result =data.split(/\s+/)
@@ -25,7 +25,7 @@ fetch('http://localhost:3000/usercount')
   });
 
 
-  fetch('http://localhost:3000/backlogcount')
+  fetch('http://15.206.72.43:3000/backlogcount')
   .then(response => response.text())
   .then(data => {
     const result =data.split(/\s+/)
@@ -40,7 +40,7 @@ fetch('http://localhost:3000/usercount')
       document.getElementById('b3').innerText=s21; 
   });
 
-  fetch('http://localhost:3000/nocert')
+  fetch('http://15.206.72.43:3000/nocert')
   .then(response => response.text())
   .then(data => {
     const result =data.split(/\s+/)

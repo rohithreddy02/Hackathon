@@ -1,4 +1,4 @@
-fetch('http://localhost:3000/userdetails')
+fetch('http://15.206.72.43:3000/userdetails')
   .then(response => response.text())
   .then(data => {
     const r =data.split(/\s+/)
