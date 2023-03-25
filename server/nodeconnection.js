@@ -457,6 +457,12 @@ app.get('/submit', (req, res) => {
 app.get('/dashboard.html', (req, res) => {
   res.sendFile(__dirname+'/dashboard.html');
 })
+
+// for images
+app.get('/assets/img/charts/scatter_plot.png', function(req, res) {
+  const imagePath = './assets/img/charts/histogram.png'; // Replace with the actual path to the image file
+  res.sendFile(imagePath);
+});
 //for java-script code:
 
 app.use('/cluster-details',express.static(__dirname+'/cluster-details.html'))
