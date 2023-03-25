@@ -90,8 +90,9 @@ app.post('/submit', (req, res) => {
     console.error(err);
   });
 
-  const { spawn } = require('child_process')
-  const hist = spawn('python3', ['histogram.py'])
+  const { spawn } = require('child_process');
+  const hist = spawn('/usr/bin/python3', ['histogram.py']);
+
   hist.on('error', (err) => {
     reject(err);
   });
