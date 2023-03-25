@@ -205,10 +205,10 @@
                 <div class="col-xl">
                   <div class="card mb-4">
                     <div class="card-body">
-                      <form method="get" action="/create_clusters">
+                      <form method="post" action="/clusters">
                         <div class="mb-3">
                           <label class="form-label" for="clusterInput" style="font-size: medium;">Number of clusters to be formed:</label>
-                          <input type="text" class="form-control" id="clusterInput" name="clusterInput"  placeholder="3">
+                          <input type="text" class="form-control" id="clusterInput" name="clusterInput" >
                         </div>
                         <button type="submit" class="btn btn-primary" style="margin-left: 38%;margin-top: 20px;">Create Clusters</button>
                       </form>
@@ -216,7 +216,7 @@
                   </div>
 
                   <div class="card">
-                    <h5 class="card-header"> Cluster Details</h5>
+                    <h5 class="card-header"> Cluster Summary</h5>
                     <div class="table-responsive text-nowrap" id="clusterdetails">
 
                     </div>
