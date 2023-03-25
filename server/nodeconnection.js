@@ -167,6 +167,37 @@ app.post('/clusters',(req,res)=>{
   res.sendFile(__dirname+'/cluster.html')
   
 })
+
+//Code for User Cluster-page
+
+app.post('/userclusters',(req,res)=>{
+  n=req.body.clusterInput
+  app.get('/create_clusters',(req,res)=>{
+    const cluster=require('./cluster_code')
+    cluster(n)
+    .then((result) => {
+      const dataString = result;
+      const rows = dataString.split('\n');
+      const headers = rows[0].split(/\s+/); // Split headers by whitespace
+  
+      const data = [];
+      for (let i = 1; i < rows.length; i++) {
+        const columns = rows[i].split(/\s+/); // Split columns by whitespace
+        const row = {};
+        for (let j = 0; j < columns.length; j++) {
+          row[headers[j]] = columns[j+1];
+        }
+        data.push(row);
+        }
+      res.json(data);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+  })
+  res.sendFile(__dirname+'/usercluster.html')
+  
+})
 //Code for Usercount
 app.get('/usercount',(req,res)=>{
   function count() {
