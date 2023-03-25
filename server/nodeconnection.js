@@ -387,6 +387,10 @@ app.get('/auth-register-basic.html',(req,res)=>{
 app.get('/form.html', (req, res) => {
   res.sendFile(__dirname+'/form.html');
 })
+
+app.get('/searchuser.html', (req, res) => {
+  res.sendFile(__dirname+'/searchuser.html');
+})
 // navigation to cluster
 app.get('/cluster.html', (req, res) => {
   res.sendFile(__dirname+'/cluster.html');
