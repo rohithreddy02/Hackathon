@@ -90,6 +90,9 @@ app.post('/submit', (req, res) => {
     console.error(err);
   });
 
+  const { spawn } = require('child_process')
+  const hist = spawn('python', ['histogram.py'])
+  
   app.get('/userdetails',(req,res)=>{
     function count(username) {
       const { spawn } = require('child_process');

@@ -1,7 +1,7 @@
 // Spawn a Python process and execute a script
 function clusters(numberOfClusters){
   const { spawn }=require('child_process');
-  const py=spawn('python',['code_1.py',numberOfClusters] );
+  const py=spawn('python',['cluster_code.py',numberOfClusters] );
   return new Promise((resolve, reject) => {
       let result = '';
   

@@ -1,4 +1,6 @@
 clusterDisplay=document.querySelector('#clusterdetails')
+clusterImg = document.querySelector('#cluster-img')
+
 fetch('http://localhost:3000/create_clusters')
   .then(response => response.text())
   .then(data => {
@@ -11,9 +13,12 @@ fetch('http://localhost:3000/create_clusters')
     const headers = table.createTHead();
     const headerRow = headers.insertRow(0);
     Object.keys(jsonData[1]).forEach(key => {
-      const th = document.createElement("th");
-      th.innerText = key;
-      headerRow.appendChild(th);
+      if(key != ''){
+        const th = document.createElement("th");
+        th.innerText = key;
+        headerRow.appendChild(th);
+      }
+      
     });
 
     // Create table rows for data
@@ -26,4 +31,10 @@ fetch('http://localhost:3000/create_clusters')
     });
 
     clusterDisplay.appendChild(table);
+    
+    const img = document.createElement('img')
+    img.setAttribute('src', '../assets/img/charts/cluster.png')
+    img.style.width ='450px'
+
+    clusterImg.appendChild(img)
   });
