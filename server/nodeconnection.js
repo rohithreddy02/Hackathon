@@ -17,7 +17,7 @@ app.post('/check',(req,res)=>{
   const password=r[2]
   function authen(username,email,password){
     const { spawn }=require('child_process');
-    const py=spawn('python',['insertintodb.py',username,email,password]);
+    const py=spawn('/usr/bin/python3',['insertintodb.py',username,email,password]);
 
     return new Promise((resolve, reject) => {
       let result = '';
@@ -57,7 +57,7 @@ app.post('/submit', (req, res) => {
   //Authentication of Login details
   function authenticate(username, password) {
     const { spawn } = require('child_process');
-    const py = spawn('python', ['logincheck.py', username, password]);
+    const py = spawn('/usr/bin/python3', ['logincheck.py', username, password]);
     
     return new Promise((resolve, reject) => {
       let result = '';
@@ -97,7 +97,7 @@ app.post('/submit', (req, res) => {
     reject(err);
   });
 
-  const scatter = spawn('python3', ['scatterplot.py'])
+  const scatter = spawn('/usr/bin/python33', ['scatterplot.py'])
   scatter.on('error', (err) => {
     reject(err);
   });
@@ -105,7 +105,7 @@ app.post('/submit', (req, res) => {
   app.get('/userdetails',(req,res)=>{
     function count(username) {
       const { spawn } = require('child_process');
-      const py = spawn('python', ['userdetails.py',username]);
+      const py = spawn('/usr/bin/python3', ['userdetails.py',username]);
       
       return new Promise((resolve, reject) => {
         let result = '';
@@ -136,12 +136,12 @@ app.post('/submit', (req, res) => {
 // Code for add-details.
 app.post('/add_db',(req,res)=>{
   const {spawn} = require('child_process');
-  const py = spawn('python', ['addformdetails.py', req.body.Sname, req.body.Sno , req.body.Semail , req.body.s11_g ,req.body.s11_b, req.body.s12_g ,req.body.s12_b, req.body.s21_g, req.body.s21_b, req.body.s22_g, req.body.s22_b, req.body.SBack , req.body.Scgpa, req.body.Scert , req.body.SExtra  ]);
+  const py = spawn('/usr/bin/python3', ['addformdetails.py', req.body.Sname, req.body.Sno , req.body.Semail , req.body.s11_g ,req.body.s11_b, req.body.s12_g ,req.body.s12_b, req.body.s21_g, req.body.s21_b, req.body.s22_g, req.body.s22_b, req.body.SBack , req.body.Scgpa, req.body.Scert , req.body.SExtra  ]);
   py.stdout.on('data', (data) => {
-    console.log(`Output from Python: ${data}`);
+    console.log(`Output from /usr/bin/python3: ${data}`);
   });
   py.stderr.on('data', (data) => {
-    console.error(`Error from Python: ${data}`);
+    console.error(`Error from /usr/bin/python3: ${data}`);
   });
   res.sendFile(__dirname+'/pages-misc-under-maintenance3.html')
   
@@ -211,7 +211,7 @@ app.post('/userclusters',(req,res)=>{
 app.get('/usercount',(req,res)=>{
   function count() {
     const { spawn } = require('child_process');
-    const py = spawn('python', ['userscount.py']);
+    const py = spawn('/usr/bin/python3', ['userscount.py']);
     
     return new Promise((resolve, reject) => {
       let result = '';
@@ -242,7 +242,7 @@ app.get('/usercount',(req,res)=>{
 app.get('/avggpa',(req,res)=>{
   function count() {
     const { spawn } = require('child_process');
-    const py = spawn('python', ['avggpa.py']);
+    const py = spawn('/usr/bin/python3', ['avggpa.py']);
     
     return new Promise((resolve, reject) => {
       let result = '';
@@ -272,7 +272,7 @@ app.get('/avggpa',(req,res)=>{
 app.get('/nocert',(req,res)=>{
   function count() {
     const { spawn } = require('child_process');
-    const py = spawn('python', ['certcount.py']);
+    const py = spawn('/usr/bin/python3', ['certcount.py']);
     
     return new Promise((resolve, reject) => {
       let result = '';
@@ -301,7 +301,7 @@ app.get('/nocert',(req,res)=>{
 app.get('/backlogcount',(req,res)=>{
   function count() {
     const { spawn } = require('child_process');
-    const py = spawn('python', ['backlogcount.py']);
+    const py = spawn('/usr/bin/python3', ['backlogcount.py']);
     
     return new Promise((resolve, reject) => {
       let result = '';
@@ -333,7 +333,7 @@ app.get('/backlogcount',(req,res)=>{
 app.get('/ranking',(req,res)=>{
   function get_ranking(){
     const { spawn }=require('child_process');
-    const py=spawn('python',['ranking.py'] );
+    const py=spawn('/usr/bin/python3',['ranking.py'] );
     return new Promise((resolve, reject) => {
         let result = '';
     
