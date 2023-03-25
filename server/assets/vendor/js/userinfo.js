@@ -37,7 +37,7 @@ fetch('http://localhost:3000/userdetails')
     else if(pos==2){
       document.getElementById('position').innerText="Board Member";
     }
-    else{
+    else if(pos==3){
       document.getElementById('position').innerText="Chair Person";
     }
   });
