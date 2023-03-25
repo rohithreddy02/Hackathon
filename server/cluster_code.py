@@ -79,12 +79,12 @@ for i in range(26):
 wedges, texts, autotexts = plt.pie(grouped_km['Cluster-Size'], autopct='%1.1f%%', shadow=True, radius=0.8, explode=explode[:size])
 
 legend = plt.legend(wedges, legend_labels[:size], loc='lower right', bbox_to_anchor=(1, 0, 0.25, 1), fontsize=12)
-legend.set_title('Cluster Classes',fontsize=12)
-plt.title('Clustered Performance', fontsize=20)
+legend.set_title('Cluster Classes',fontsize=15)
+plt.title('Pie Chart Representing clusters', fontsize=20)
 
-# plt.show()
+plt.show()
 
-plt.savefig('./assets/img/Charts/Cluster.png')
+# plt.savefig('./assets/img/Charts/Cluster.png')
 
 db.close()
 
