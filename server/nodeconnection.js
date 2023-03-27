@@ -10,75 +10,43 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 //Define route for search user details
 app.post('/searchuser', (req, res) => {
-  if (req.method === 'POST') {
     // Code for POST method
     let r=Object.values(req.body)
     let username = r[0];
     console.log(username);
-
-    function count(username) {
-      const { spawn } = require('child_process');
-
-      const py = spawn('python', ['search.py', username]);
-
-      return new Promise((resolve, reject) => {
-        let result = '';
-
-        py.stdout.on('data', (data) => {
-          result += data.toString();
-        });
-
-        py.stdout.on('end', () => {
-          resolve(result.trim());
-        });
-
-        py.on('error', (err) => {
-          reject(err);
-        });
-      });
-    }
-
-    count(username)
-      .then((result) => {
-        console.log(result);
-        res.sendFile(__dirname+'/searchuser.html');
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-      app.get('/searchuserget',(req,res)=>{
+    app.get('/searchuserget',(req,res)=>{
         function count(username) {
-          const { spawn } = require('child_process');
+        const { spawn } = require('child_process');
     
-          const py = spawn('python', ['search.py', username]);
+        const  py = spawn('python', ['search.py', username]);
     
-          return new Promise((resolve, reject) => {
-            let result = '';
+        return new Promise((resolve, reject) => {
+          let result = '';
     
-            py.stdout.on('data', (data) => {
-              result += data.toString();
-            });
-    
-            py.stdout.on('end', () => {
-              resolve(result.trim());
-            });
-    
-            py.on('error', (err) => {
-              reject(err);
-            });
+          py.stdout.on('data', (data) => {
+            result += data.toString();
           });
-        }
     
-        count(username)
-          .then((result) => {
-            console.log(result);
-            res.send(result);
-          })
-          .catch((err) => {
-            console.error(err);
+          py.stdout.on('end', () => {
+            resolve(result.trim());
           });
-      })
-  }
+    
+          py.on('error', (err) => {
+            reject(err);
+          });
+        });
+      }
+    
+      count(username)
+        .then((result) => {
+          console.log(result);
+          res.send(result);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    })
+    res.sendFile(__dirname+'/searchuser.html')
 });
 
 
@@ -132,7 +100,7 @@ app.post('/submit', (req, res) => {
   //Authentication of Login details
   function authenticate(username, password) {
     const { spawn } = require('child_process');
-    const py = spawn('/usr/bin/python3', ['logincheck.py', username, password]);
+    let py = spawn('/usr/bin/python3', ['logincheck.py', username, password]);
     
     return new Promise((resolve, reject) => {
       let result = '';
