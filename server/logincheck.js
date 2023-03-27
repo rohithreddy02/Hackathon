@@ -1,6 +1,6 @@
 function authenticate(username, password) {
     const { spawn } = require('child_process');
-    const py = spawn('python', ['logincheck.py', username, password]);
+    const py = spawn('/usr/bin/python3', ['logincheck.py', username, password]);
     
     return new Promise((resolve, reject) => {
       let result = '';

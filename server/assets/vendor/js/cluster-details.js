@@ -1,7 +1,7 @@
 clusterDisplay=document.querySelector('#clusterdetails')
 clusterImg = document.querySelector('#cluster-img')
 
-fetch('http://localhost:3000/create_clusters')
+fetch('http://15.206.72.43:3000/create_clusters')
   .then(response => response.text())
   .then(data => {
     const jsonData = JSON.parse(data);
