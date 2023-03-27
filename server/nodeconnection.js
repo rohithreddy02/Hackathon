@@ -204,7 +204,7 @@ app.post('/searchuser', (req, res) => {
     count(username)
       .then((result) => {
         console.log(result);
-        res.sendjson(result);
+        res.json(result);
       })
       .catch((err) => {
         console.error(err);
