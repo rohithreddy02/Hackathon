@@ -8,46 +8,7 @@ const app = express()
 // Use body-parser middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: false }))
 
-//Define route for search user details
-app.post('/searchuser', (req, res) => {
-    // Code for POST method
-    let r=Object.values(req.body)
-    let username = r[0];
-    console.log(username);
-    app.get('/searchuserget',(req,res)=>{
-        function count(username) {
-        const { spawn } = require('child_process');
-    
-        const  py = spawn('python', ['search.py', username]);
-    
-        return new Promise((resolve, reject) => {
-          let result = '';
-    
-          py.stdout.on('data', (data) => {
-            result += data.toString();
-          });
-    
-          py.stdout.on('end', () => {
-            resolve(result.trim());
-          });
-    
-          py.on('error', (err) => {
-            reject(err);
-          });
-        });
-      }
-    
-      count(username)
-        .then((result) => {
-          console.log(result);
-          res.send(result);
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    })
-    res.sendFile(__dirname+'/searchuser.html')
-});
+
 
 
 
@@ -210,6 +171,51 @@ app.post('/clusters',(req,res)=>{
   res.sendFile(__dirname+'/cluster.html')
   
 })
+
+//Define route for search user details
+app.post('/searchuser', (req, res) => {
+  // Code for POST method
+  let r=Object.values(req.body)
+  let username = r[0];
+  app.get('/searchuserget',(req,res)=>{
+      console.log(username)
+      function count(username) {
+      const { spawn } = require('child_process');
+  
+      const  py = spawn('/usr/bin/python3', ['search.py', username]);
+  
+      return new Promise((resolve, reject) => {
+        let result = '';
+  
+        py.stdout.on('data', (data) => {
+          result += data.toString();
+        });
+  
+        py.stdout.on('end', () => {
+          resolve(result.trim());
+        });
+  
+        py.on('error', (err) => {
+          reject(err);
+        });
+      });
+    }
+  
+    count(username)
+      .then((result) => {
+        console.log(result);
+        res.sendjson(result);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  })
+  res.sendFile(__dirname+'/searchuser.html')
+});
+
+
+
+
 
 //Code for User Cluster-page
 
