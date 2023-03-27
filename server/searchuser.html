@@ -219,14 +219,17 @@
                      <!-- Search -->
               
                      <div class="navbar-nav align-items-center">
+                      <form action="/searchuser" method="post">
+                        <div class="nav-item d-flex align-items-center" style="display: flex; justify-content: space-between;">
               
-                      <div class="nav-item d-flex align-items-center" style="display: flex; justify-content: space-between;">
+                          <i class="bx bx-search fs-4 lh-0"></i>
+                 
+                          <input type="text" class="form-control border-0 shadow-none" placeholder="Search..." aria-label="Search..." name="serachusername">
+                          <button class="btn btn-primary"  >Search</button>
+                         </div>
+                      </form>
               
-                       <i class="bx bx-search fs-4 lh-0"></i>
-              
-                       <input type="text" class="form-control border-0 shadow-none" placeholder="Search..." aria-label="Search...">
-                       <button class="btn btn-primary"  >Search</button>
-                      </div>
+                      
               
                      </div>
               
@@ -246,7 +249,7 @@
               
                       <li class="nav-item navbar-dropdown dropdown-user dropdown">
               
-                       <button class="btn btn-primary" style="margin-left: 38%;margin-top: 20px;" >Search</button>
+                       
               
                        <ul class="dropdown-menu dropdown-menu-end">
               
@@ -379,7 +382,7 @@
                       
                     </div>
                     <h3 class="card-title mb-2">CGPA</h3>
-                    <h2 id="cgpa"></h2>
+                    <h2 id="cgpax"></h2>
                     
                   </div>
                 </div>
@@ -391,7 +394,7 @@
                       
                     </div>
                     <h3 class="card-title mb-2">Total Backlogs</h3>
-                    <h2 id="totalbacklogs"></h2>
+                    <h2 id="totalbacklogsx"></h2>
                   </div>
                 </div>
               </div> 
@@ -404,7 +407,7 @@
                       
                     </div>
                     <h3 class="card-title mb-2">No of Certificates Approved</h3>
-                    <h2 id="nocert"></h2>
+                    <h2 id="nocertx"></h2>
                     
                   </div>
                 </div>
@@ -416,7 +419,7 @@
                       
                     </div>
                     <h3 class="card-title mb-2">Position in Extra-curricular</h3>
-                    <h3 id="position"></h3>
+                    <h3 id="positionx"></h3>
                   </div>
                 </div>
               </div> 
@@ -448,7 +451,7 @@
                             
                           </div>
                           <div class="user-progress">
-                            <h6 id="us1"></h6>
+                            <h6 id="us1x"></h6>
                           </div>
                         </div>
                       </li>
@@ -462,7 +465,7 @@
                             
                           </div>
                           <div class="user-progress">
-                            <h6 id="us2"></h6>
+                            <h6 id="us2x"></h6>
                           </div>
                         </div>
                       </li>
@@ -476,7 +479,7 @@
                             
                           </div>
                           <div class="user-progress">
-                            <h6 id="us3"></h6>
+                            <h6 id="us3x"></h6>
                           </div>
                         </div>
                       </li>
@@ -490,7 +493,7 @@
                             
                           </div>
                           <div class="user-progress">
-                            <h6 id="us4"></h6>
+                            <h6 id="us4x"></h6>
                           </div>
                         </div>
                       </li>
@@ -519,7 +522,7 @@
                             <h5 class="mb-0">Semester-1</h5>
                           </div>
                           <div class="user-progress d-flex align-items-center gap-1">
-                            <h6 id="ub1"></h6>
+                            <h6 id="ub1x"></h6>
                           </div>
                         </div>
                       </li>
@@ -533,7 +536,7 @@
                             <h5 class="mb-0">Semester-2</h5>
                           </div>
                           <div class="user-progress d-flex align-items-center gap-1">
-                            <h6 id="ub2"></h6>
+                            <h6 id="ub2x"></h6>
                           </div>
                         </div>
                       </li>
@@ -547,7 +550,7 @@
                             <h5 class="mb-0">Semester-3</h5>
                           </div>
                           <div class="user-progress d-flex align-items-center gap-1">
-                            <h6 id="ub3"></h6>
+                            <h6 id="ub3x"></h6>
                           </div>
                         </div>
                       </li>
@@ -561,7 +564,7 @@
                             <h5 class="mb-0">Semester-4</h5>
                           </div>
                           <div class="user-progress d-flex align-items-center gap-1">
-                            <h6 id="ub4"></h6>
+                            <h6 id="ub4x"></h6>
                           </div>
                         </div>
                       </li>
@@ -614,6 +617,6 @@
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-    <script src="../assets/vendor/js/userinfo.js"></script>
+    <script src="../assets/vendor/js/search.js"></script>
   </body>
 </html>
