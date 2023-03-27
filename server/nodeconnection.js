@@ -511,6 +511,6 @@ app.get('/dashboard.html', (req, res) => {
 app.use('/cluster-details',express.static(__dirname+'/cluster-details.html'))
 // Start the server
 
-app.listen(80, () => {
-  console.log('Server started on http://localhost:80');
+app.listen(3000, () => {
+  console.log('Server started on http://localhost:3000');
 })
