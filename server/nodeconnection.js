@@ -202,11 +202,10 @@ app.post('/searchuser', (req, res) => {
     }
   
     count(username)
-      .then((result) => {
-        console.log(result);
+    .then((result) => {
         res.json(result);
       })
-      .catch((err) => {
+    .catch((err) => {
         console.error(err);
       });
   })
@@ -512,6 +511,6 @@ app.get('/dashboard.html', (req, res) => {
 app.use('/cluster-details',express.static(__dirname+'/cluster-details.html'))
 // Start the server
 
-app.listen(3000, () => {
-  console.log('Server started on http://localhost:3000');
+app.listen(80, () => {
+  console.log('Server started on http://localhost:80');
 })
