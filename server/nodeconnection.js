@@ -8,6 +8,81 @@ const app = express()
 // Use body-parser middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: false }))
 
+//Define route for search user details
+app.post('/searchuser', (req, res) => {
+  if (req.method === 'POST') {
+    // Code for POST method
+    let r=Object.values(req.body)
+    let username = r[0];
+    console.log(username);
+
+    function count(username) {
+      const { spawn } = require('child_process');
+
+      const py = spawn('python', ['search.py', username]);
+
+      return new Promise((resolve, reject) => {
+        let result = '';
+
+        py.stdout.on('data', (data) => {
+          result += data.toString();
+        });
+
+        py.stdout.on('end', () => {
+          resolve(result.trim());
+        });
+
+        py.on('error', (err) => {
+          reject(err);
+        });
+      });
+    }
+
+    count(username)
+      .then((result) => {
+        console.log(result);
+        res.sendFile(__dirname+'/searchuser.html');
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+      app.get('/searchuserget',(req,res)=>{
+        function count(username) {
+          const { spawn } = require('child_process');
+    
+          const py = spawn('python', ['search.py', username]);
+    
+          return new Promise((resolve, reject) => {
+            let result = '';
+    
+            py.stdout.on('data', (data) => {
+              result += data.toString();
+            });
+    
+            py.stdout.on('end', () => {
+              resolve(result.trim());
+            });
+    
+            py.on('error', (err) => {
+              reject(err);
+            });
+          });
+        }
+    
+        count(username)
+          .then((result) => {
+            console.log(result);
+            res.send(result);
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      })
+  }
+});
+
+
+
 //Define route to handle submission of registration
 app.post('/check',(req,res)=>{
   var r=Object.values(req.body)
