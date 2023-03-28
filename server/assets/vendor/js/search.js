@@ -2,20 +2,23 @@ fetch('http://15.206.72.43:3000/searchuserget')
   .then(response => response.text())
   .then(result => {
     console.log(result)
-    data=result.split(/\s+/)
-    let Name=data[0]
-    let TotalGpa =data[1]
-    let TotalBacklogs=data[2]
-    let Nocert=data[3] 
-    let pos=data[4] 
-    let S11G=data[5]
-    let S12G=data[6]
-    let S21G=data[7]
-    let S22G=data[8]
-    let S11B=data[9]
-    let S12B=data[10]
-    let S21B=data[11]
-    let S22B=data[12]
+    const pattern = /^([a-zA-Z]+(?: [a-zA-Z]+){0,2}) (\d{1,2}\.\d{2}) (\d+) (\d{1,2}) ((?:\d\.\d{2} ){4})(\d+ ){4}$/;
+    const match = result.match(pattern);
+
+    if (match) {
+      const name = match[1];
+      const totalGpa = parseFloat(match[2]);
+      const totalBacklogs = parseInt(match[3]);
+      const numCertificates = parseInt(match[4]);
+      const semesterGpas = match[5].trim().split(' ').map(parseFloat);
+      const semesterBacklogs = match[6].trim().split(' ').map(parseInt);
+
+      console.log(name,totalGpa,totalBacklogs,numCertificates,semesterGpas,semesterBacklogs);
+  // Do something with the variables
+    } else {
+      console.log('No match found');
+    }
+
     
     document.getElementById('Namex').innerText=Name;
     document.getElementById('cgpax').innerText=TotalGpa;
