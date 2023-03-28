@@ -2,7 +2,7 @@ fetch('http://15.206.72.43:3000/searchuserget')
   .then(response => response.text())
   .then(result => {
     console.log(result)
-    const pattern = /^([a-zA-Z]+(?: [a-zA-Z]+){0,2}) (\d{1,2}\.\d{2}) (\d+) (\d{1,2}) ((?:\d\.\d{2} ){4})(\d+ ){4}$/;
+    const pattern = /^([a-zA-Z]+(?: [a-zA-Z]+){0,2}) (\d{1,2}\.\d{2}) (\d+) (\d{1,2}) ((?:\d\.\d{2} ){3}\d\.\d{2}) (\d+ ){4}$/
     const match = result.match(pattern);
 
     if (match) {
