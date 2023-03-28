@@ -1,7 +1,8 @@
 fetch('http://15.206.72.43:3000/searchuserget')
   .then(response => response.text())
-  .then(data => {
-    console.log(data)
+  .then(result => {
+    console.log(result)
+    data=result.split(/\s+/)
     let Name=data[0]
     let TotalGpa =data[1]
     let TotalBacklogs=data[1]
