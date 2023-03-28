@@ -33,7 +33,7 @@ fetch('http://15.206.72.43:3000/create_clusters')
     clusterDisplay.appendChild(table);
     
     const img = document.createElement('img')
-    img.setAttribute('src', '../assets/img/Charts/scatter_plot.png')
+    img.setAttribute('src', '../assets/img/Charts/cluster.png')
     img.style.width ='450px'
 
     clusterImg.appendChild(img)
