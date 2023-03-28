@@ -46,5 +46,5 @@ fetch('http://15.206.72.43:3000/searchuserget')
   fetch('http://15.206.72.43:3000/name')
   .then(response => response.text())
   .then(data => { 
-    document.getElementById('namex').innerText=data;
+    document.getElementById('Namex').innerText=data;
   });
