@@ -15,7 +15,7 @@ fetch('http://15.206.72.43:3000/userdetails')
     let S12B=r[9]
     let S21B=r[10]
     let S22B=r[11]
-    let Name=r[12]
+    
     document.getElementById('cgpa').innerText=TotalGpa;
     document.getElementById('totalbacklogs').innerText=TotalBacklogs;
     document.getElementById('nocert').innerText=Nocert;
@@ -27,7 +27,7 @@ fetch('http://15.206.72.43:3000/userdetails')
     document.getElementById('ub2').innerText=S12B;
     document.getElementById('ub3').innerText=S21B;
     document.getElementById('ub4').innerText=S22B;
-    document.getElementById('name').innerText='Hi '+Name+'\nThankyou for using our website'
+    
     if(pos==0){
       document.getElementById('position').innerText="No Postion";
     }
@@ -40,4 +40,10 @@ fetch('http://15.206.72.43:3000/userdetails')
     else if(pos==3){
       document.getElementById('position').innerText="Chair Person";
     }
+  });
+
+  fetch('http://15.206.72.43:3000/nameuserdashboard')
+  .then(response => response.text())
+  .then(data => { 
+    document.getElementById('namex').innerText='Hi '+data+'\nThankyou for using our website'
   });

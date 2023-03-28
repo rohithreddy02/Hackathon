@@ -1,26 +1,21 @@
 fetch('http://15.206.72.43:3000/searchuserget')
   .then(response => response.text())
-  .then(result => {
-    console.log(result)
-    const pattern = /^([a-zA-Z]+(?: [a-zA-Z]+){0,2}) (\d{1,2}\.\d{2}) (\d+) (\d{1,2}) ((?:\d\.\d{2} ){3}\d\.\d{2}) (\d+ ){4}$/
-    const match = result.match(pattern);
-
-    if (match) {
-      const name = match[1];
-      const totalGpa = parseFloat(match[2]);
-      const totalBacklogs = parseInt(match[3]);
-      const numCertificates = parseInt(match[4]);
-      const semesterGpas = match[5].trim().split(' ').map(parseFloat);
-      const semesterBacklogs = match[6].trim().split(' ').map(parseInt);
-
-      console.log(name,totalGpa,totalBacklogs,numCertificates,semesterGpas,semesterBacklogs);
-  // Do something with the variables
-    } else {
-      console.log('No match found');
-    }
-
+  .then(data => {
+    const r =data.split(/\s+/)
+    console.log(r);
+    let TotalGpa =r[0]
+    let TotalBacklogs=r[1]
+    let Nocert=r[2] 
+    let pos=r[3] 
+    let S11G=r[4]
+    let S12G=r[5]
+    let S21G=r[6]
+    let S22G=r[7]
+    let S11B=r[8]
+    let S12B=r[9]
+    let S21B=r[10]
+    let S22B=r[11]
     
-    document.getElementById('Namex').innerText=Name;
     document.getElementById('cgpax').innerText=TotalGpa;
     document.getElementById('totalbacklogsx').innerText=TotalBacklogs;
     document.getElementById('nocertx').innerText=Nocert;
@@ -45,4 +40,11 @@ fetch('http://15.206.72.43:3000/searchuserget')
     else if(pos==3){
       document.getElementById('positionx').innerText="Chair Person";
     }
+  });
+
+
+  fetch('http://15.206.72.43:3000/name')
+  .then(response => response.text())
+  .then(data => { 
+    document.getElementById('namex').innerText=data;
   });

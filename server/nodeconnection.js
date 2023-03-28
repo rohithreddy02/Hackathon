@@ -96,6 +96,35 @@ app.post('/submit', (req, res) => {
 
   const { spawn } = require('child_process');
   const hist = spawn('/usr/bin/python3', ['histogram.py']);
+  app.get('/nameuserdashboard',(req,res)=>{
+    function count(username) {
+      const { spawn } = require('child_process');
+      const py = spawn('/usr/bin/python3', ['name.py',username]);
+      
+      return new Promise((resolve, reject) => {
+        let result = '';
+    
+        py.stdout.on('data', (data) => {
+          result += data.toString();
+        });
+    
+        py.stdout.on('end', () => {
+          resolve(result.trim());
+        });
+    
+        py.on('error', (err) => {
+          reject(err);
+        });
+      });
+    }
+    count(email).then((result) => {
+      res.json(result);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+  
+  })
   
   app.get('/userdetails',(req,res)=>{
     function count(username) {
@@ -119,7 +148,7 @@ app.post('/submit', (req, res) => {
       });
     }
     count(email).then((result) => {
-      res.send(result);
+      res.json(result);
     })
     .catch((err) => {
       console.error(err);
@@ -176,8 +205,40 @@ app.post('/clusters',(req,res)=>{
 app.post('/searchuser', (req, res) => {
   // Code for POST method
   username=req.body.serachusername
+  app.get('/name',(req,res)=>{
+    
+    function name(user) {
+    const { spawn } = require('child_process');
+
+    const  py = spawn('/usr/bin/python3', ['name.py', user]);
+
+    return new Promise((resolve, reject) => {
+      let result = '';
+
+      py.stdout.on('data', (data) => {
+        result += data.toString();
+      });
+
+      py.stdout.on('end', () => {
+        resolve(result.trim());
+      });
+
+      py.on('error', (err) => {
+        reject(err);
+      });
+    });
+  }
+
+  name(username)
+  .then((result) => {
+      res.json(result);
+    })
+  .catch((err) => {
+      console.error(err);
+    });
+})
   app.get('/searchuserget',(req,res)=>{
-      console.log(username)
+      
       function count(user) {
       const { spawn } = require('child_process');
   
