@@ -3,25 +3,6 @@ from sklearn.cluster import KMeans
 import sys
 from connection import create_connection
 import matplotlib.pyplot as plt
-import io
-from google.oauth2 import service_account
-from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
-from googleapiclient.http import MediaIoBaseUpload
-
-SERVICE_ACCOUNT_FILE = 'jovial-circuit-381917-d54006a1885f.json'
-SCOPES = ['https://www.googleapis.com/auth/drive']
-
-creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
-service = build('drive', 'v3', credentials=creds)
-
-
-# Authenticate and create the Drive API client
-drive_service = build('drive', 'v3', credentials=creds)
-
-# Define the folder ID in which the file will be saved
-folder_id = '1cnbwxFh7mmZfvLsA3tAtyHwOVIgFgxcx'
-
 
 n=int(sys.argv[1])
 
@@ -101,18 +82,6 @@ plt.title('Pie Chart Representing clusters', fontsize=20)
 
 # plt.show()
 
-image_file = io.BytesIO()
-plt.savefig(image_file, format='png')
-image_file.seek(0)
-
-# Create the file metadata
-file_metadata = {'name': 'histogram.png', 'parents': [folder_id], 'mimeType': 'image/png'}
-
-# Create the media object for the file upload
-media = MediaIoBaseUpload(image_file, mimetype='image/png', resumable=True)
-
-file_id="1do4UWx6DLvi2hb1FzOTP91r0pifldN62"
-# Upload the file to Google Drive
-updated_file = drive_service.files().update(fileId=file_id, media_body=media).execute()
+plt.savefig('./assets/img/Charts/Cluster.png')
 
 db.close()
