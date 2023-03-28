@@ -175,13 +175,13 @@ app.post('/clusters',(req,res)=>{
 //Define route for search user details
 app.post('/searchuser', (req, res) => {
   // Code for POST method
-  console.log(req.body)
+  username=req.body.searchusername
   app.get('/searchuserget',(req,res)=>{
       console.log(username)
-      function count(username) {
+      function count(user) {
       const { spawn } = require('child_process');
   
-      const  py = spawn('/usr/bin/python3', ['search.py', username]);
+      const  py = spawn('/usr/bin/python3', ['search.py', user]);
   
       return new Promise((resolve, reject) => {
         let result = '';
