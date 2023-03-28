@@ -175,7 +175,7 @@ app.post('/clusters',(req,res)=>{
 //Define route for search user details
 app.post('/searchuser', (req, res) => {
   // Code for POST method
-  username=req.body.searchusername
+  username=req.body.serachusername
   app.get('/searchuserget',(req,res)=>{
       console.log(username)
       function count(user) {
