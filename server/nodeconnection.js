@@ -162,7 +162,7 @@ app.post('/clusters',(req,res)=>{
         }
         data.push(row);
         }
-      res.json(data);
+      res.send(data);
     })
     .catch((err) => {
       console.error(err);
