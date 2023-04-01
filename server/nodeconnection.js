@@ -100,9 +100,9 @@ app.post('/submit', (req, res) => {
   const scatter = spawn('/usr/bin/python3',['scatterplot.py']);
 
   app.get('/userdetails',(req,res)=>{
-    function count(username) {
+    function count(user) {
       const { spawn } = require('child_process');
-      const py = spawn('/usr/bin/python3', ['userdetails.py',username]);
+      const py = spawn('/usr/bin/python3', ['userdetails.py',user]);
       
       return new Promise((resolve, reject) => {
         let result = '';
