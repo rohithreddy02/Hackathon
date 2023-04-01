@@ -1,4 +1,4 @@
-fetch('http://15.206.72.43:3000/searchuserget')
+fetch('http://13.233.245.126:3000/searchuserget')
   .then(response => response.text())
   .then(data => {
     const r =data.split(/\s+/)
@@ -43,7 +43,7 @@ fetch('http://15.206.72.43:3000/searchuserget')
   });
 
 
-  fetch('http://15.206.72.43:3000/name')
+  fetch('http://13.233.245.126:3000/name')
   .then(response => response.text())
   .then(data => { 
     document.getElementById('Namex').innerText=data;

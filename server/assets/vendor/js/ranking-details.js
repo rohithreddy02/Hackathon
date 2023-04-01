@@ -1,5 +1,5 @@
 clusterDisplay=document.querySelector('#ranking-table')
-fetch('http://15.206.72.43:3000/ranking')
+fetch('http://13.233.245.126:3000/ranking')
   .then(response => response.text())
   .then(data => {
     const jsonData = JSON.parse(data);
