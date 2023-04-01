@@ -45,5 +45,5 @@ fetch('http://13.233.245.126:3000/userdetails')
   fetch('http://13.233.245.126:3000/nameuserdashboard')
   .then(response => response.text())
   .then(data => { 
-    document.getElementById('namex').innerText='Hi '+data+'\nThankyou for using our website'
+    document.getElementById('name').innerText='Hi '+data+'\nThankyou for using our website'
   });
