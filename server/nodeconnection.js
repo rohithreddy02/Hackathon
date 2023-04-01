@@ -99,7 +99,36 @@ app.post('/submit', (req, res) => {
   const hist = spawn('/usr/bin/python3', ['histogram.py']);
   const scatter = spawn('/usr/bin/python3',['scatterplot.py']);
 
-
+  app.get('/userdetails',(req,res)=>{
+    function count(username) {
+      const { spawn } = require('child_process');
+      const py = spawn('/usr/bin/python3', ['userdetails.py',username]);
+      
+      return new Promise((resolve, reject) => {
+        let result = '';
+    
+        py.stdout.on('data', (data) => {
+          result += data.toString();
+        });
+    
+        py.stdout.on('end', () => {
+          resolve(result.trim());
+        });
+    
+        py.on('error', (err) => {
+          reject(err);
+        });
+      });
+    }
+    count(email).then((result) => {
+      res.json(result);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+  
+  })
+  
   //for 
   app.get('/nameuserdashboard',(req,res)=>{
     function count(username) {
@@ -132,35 +161,6 @@ app.post('/submit', (req, res) => {
   })
 })
 
-app.get('/userdetails',(req,res)=>{
-  function count(username) {
-    const { spawn } = require('child_process');
-    const py = spawn('/usr/bin/python3', ['userdetails.py',username]);
-    
-    return new Promise((resolve, reject) => {
-      let result = '';
-  
-      py.stdout.on('data', (data) => {
-        result += data.toString();
-      });
-  
-      py.stdout.on('end', () => {
-        resolve(result.trim());
-      });
-  
-      py.on('error', (err) => {
-        reject(err);
-      });
-    });
-  }
-  count(email).then((result) => {
-    res.json(result);
-  })
-  .catch((err) => {
-    console.error(err);
-  });
-
-})
 
 
 // Code for add-details.
