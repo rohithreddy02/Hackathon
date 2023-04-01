@@ -96,6 +96,10 @@ app.post('/submit', (req, res) => {
 
   const { spawn } = require('child_process');
   const hist = spawn('/usr/bin/python3', ['histogram.py']);
+  const scatter = spawn('/usr/bin/python3',['scatterplot.py']);
+
+
+  //for 
   app.get('/nameuserdashboard',(req,res)=>{
     function count(username) {
       const { spawn } = require('child_process');
@@ -156,6 +160,8 @@ app.post('/submit', (req, res) => {
   
   })
 })
+
+
 
 // Code for add-details.
 app.post('/add_db',(req,res)=>{
