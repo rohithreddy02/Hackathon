@@ -8,7 +8,7 @@ fetch('http://13.233.245.126:3000/create_clusters')
     // delete(jsonData[0])
     // const table = document.createElement("table");
     // table.setAttribute("class", "table")
-    // console.log(jsonData);
+    console.log(jsonData);
     // // Create table headers
     // const headers = table.createTHead();
     // const headerRow = headers.insertRow(0);
@@ -41,7 +41,7 @@ fetch('http://13.233.245.126:3000/create_clusters')
   const summaryData = jsondata.filter(obj => obj['Grade'] !== 'Cluster' && obj['Cluster-Size'] !== 'Rollno');
 
   // Generate the summary table HTML
-  let summaryTableHTML = '<table>';
+  let summaryTableHTML = '<table class="table">';
   summaryTableHTML += '<tr><th>Grade</th><th>Cluster Size</th><th>Total GPA</th><th>No Cert</th><th>Extra</th></tr>';
   summaryData.forEach(obj => {
     summaryTableHTML += `<tr><td>${obj['Grade']}</td><td>${obj['Cluster-Size']}</td><td>${obj['TotalGpa']}</td><td>${obj['Nocert']}</td><td>${obj['Extra']}</td></tr>`;
@@ -65,7 +65,7 @@ fetch('http://13.233.245.126:3000/create_clusters')
         detailTablesHTML += '</table>';
       }
       currentCluster = obj['Grade'] + obj['Cluster-Size'];
-      detailTablesHTML += `<h2>Cluster ${obj['Grade']}</h2><table>`;
+      detailTablesHTML += `<h2>Cluster ${obj['Grade']}</h2><table class="table">`;
       clusterCount++;
     } else {
       // This is a student detail, add a row to the current detail table
