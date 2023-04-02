@@ -1,6 +1,5 @@
 clusterDisplay=document.querySelector('#clusterdetails')
 clusterImg = document.querySelector('#cluster-img')
-clusterMem=document.querySelector("#cluster-members")
 fetch('http://13.233.245.126:3000/create_clusters')
   .then(response => response.text())
   .then(data => {
@@ -20,30 +19,25 @@ fetch('http://13.233.245.126:3000/create_clusters')
       }
       
     });
-
     // Create table rows for data
     jsonData.forEach(element => {
-      if(element != {}){
       const row = table.insertRow();
       Object.keys(element).forEach(key => {
+        if (key !=null){
         const cell = row.insertCell();
         cell.innerHTML = element[key];
-      });
-    }
-      else{
-      const table1 = document.createElement("table");
-      table1.setAttribute("class", "table")
-      table1.setAttribute("style","border :1px black;")
       }
+        else{
+          const table = document.createElement("table");
+          table.setAttribute("class", "table")
+        }
+      });
     });
- 
 
     clusterDisplay.appendChild(table);
-    cluserMem.appendChild(table1)
     
     const img = document.createElement('img')
     img.setAttribute('src', '../assets/img/Charts/Cluster.png')
     img.style.width ='450px'
-
     clusterImg.appendChild(img)
   });
