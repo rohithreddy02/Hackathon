@@ -8,7 +8,7 @@ fetch('http://13.233.245.126:3000/create_clusters')
     // delete(jsonData[0])
     // const table = document.createElement("table");
     // table.setAttribute("class", "table")
-    console.log(jsonData);
+    console.log(jsondata);
     // // Create table headers
     // const headers = table.createTHead();
     // const headerRow = headers.insertRow(0);
