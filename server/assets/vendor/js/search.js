@@ -3,19 +3,21 @@ fetch('http://13.233.245.126:3000/searchuserget')
   .then(data => {
     const r =data.split(/\s+/)
     console.log(r);
-    let TotalGpa =r[0]
-    let TotalBacklogs=r[1]
-    let Nocert=r[2] 
-    let pos=r[3] 
-    let S11G=r[4]
-    let S12G=r[5]
-    let S21G=r[6]
-    let S22G=r[7]
-    let S11B=r[8]
-    let S12B=r[9]
-    let S21B=r[10]
-    let S22B=r[11]
+    let Rollno=r[0]
+    let TotalGpa =r[1]
+    let TotalBacklogs=r[2]
+    let Nocert=r[3] 
+    let pos=r[4] 
+    let S11G=r[5]
+    let S12G=r[6]
+    let S21G=r[7]
+    let S22G=r[8]
+    let S11B=r[9]
+    let S12B=r[10]
+    let S21B=r[11]
+    let S22B=r[12]
     
+    document.getElementById('Rollnox').innerText=Rollno;
     document.getElementById('cgpax').innerText=TotalGpa;
     document.getElementById('totalbacklogsx').innerText=TotalBacklogs;
     document.getElementById('nocertx').innerText=Nocert;
