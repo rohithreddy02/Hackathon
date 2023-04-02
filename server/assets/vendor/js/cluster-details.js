@@ -32,6 +32,7 @@ fetch('http://13.233.245.126:3000/create_clusters')
         else{
           const table = document.createElement("table");
           table.setAttribute("class", "table")
+          table.setAttribute("style","border :1px black;")
         }
       });
     });
