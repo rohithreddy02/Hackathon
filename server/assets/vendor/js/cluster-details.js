@@ -23,18 +23,18 @@ fetch('http://13.233.245.126:3000/create_clusters')
 
     // Create table rows for data
     jsonData.forEach(element => {
+      if(element != {}){
       const row = table.insertRow();
       Object.keys(element).forEach(key => {
-        if (key !=null){
         const cell = row.insertCell();
         cell.innerHTML = element[key];
-      }
-        else{
-          const table1 = document.createElement("table");
-          table1.setAttribute("class", "table")
-          table1.setAttribute("style","border :1px black;")
-        }
       });
+    }
+      else{
+      const table1 = document.createElement("table");
+      table1.setAttribute("class", "table")
+      table1.setAttribute("style","border :1px black;")
+      }
     });
 
     clusterDisplay.appendChild(table);
