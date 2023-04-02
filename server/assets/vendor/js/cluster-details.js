@@ -1,6 +1,6 @@
 clusterDisplay=document.querySelector('#clusterdetails')
 clusterImg = document.querySelector('#cluster-img')
-
+clusterMem=document.querySelector("#cluster-members")
 fetch('http://13.233.245.126:3000/create_clusters')
   .then(response => response.text())
   .then(data => {
@@ -30,14 +30,15 @@ fetch('http://13.233.245.126:3000/create_clusters')
         cell.innerHTML = element[key];
       }
         else{
-          const table = document.createElement("table");
-          table.setAttribute("class", "table")
-          table.setAttribute("style","border :1px black;")
+          const table1 = document.createElement("table");
+          table1.setAttribute("class", "table")
+          table1.setAttribute("style","border :1px black;")
         }
       });
     });
 
     clusterDisplay.appendChild(table);
+    cluserMem.appendChild(table1)
     
     const img = document.createElement('img')
     img.setAttribute('src', '../assets/img/Charts/Cluster.png')
