@@ -237,7 +237,7 @@ app.post('/searchuser', (req, res) => {
 
   name(username)
   .then((result) => {
-      res.json(result);
+      res.send(result);
     })
   .catch((err) => {
       console.error(err);
@@ -269,7 +269,7 @@ app.post('/searchuser', (req, res) => {
   
     count(username)
     .then((result) => {
-        res.json(result);
+        res.send(result);
       })
     .catch((err) => {
         console.error(err);
